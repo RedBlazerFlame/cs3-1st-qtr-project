@@ -13,32 +13,18 @@
         <meta name="date" content="31/10/2021" />
         <meta name="revised" content="31/10/2021" />
         <script
-            src="scripts/component-generation/generator.js"
+            src="/scripts/component-generation/generator.js"
             type="module"
             defer
         ></script>
-        <script src="scripts/homePage.js" type="module" defer></script>
-        <link rel="stylesheet" href="/css/home.css" />
-        <title>Document</title>
+        <script src="/scripts/global.js" type="module" defer></script>
+        <link rel="icon" href="/images/logo1.png" type="image/png">
+        <link rel="stylesheet" href="/css/global.css" type="text/css"/>
+        <link rel="stylesheet" href="/css/header.module.css" type="text/css"/>
+        <title>The Climate Post</title>
     </head>
     <body>
-        IT'S WORKING
-        <div data-component="" data-component-name="Input" data-props='{"value": ""}''></div>
-        <div
-            data-component
-            data-component-name="Counter"
-            data-props='{"count": 0}'
-        ></div>
-        <div
-            data-component
-            data-component-name="User"
-            data-props='{"name": "Red", "description": "Is very sussy 🐷", "interests": ["Among us", "Saying \"sus\""]}'
-        ></div>
-        <div
-            data-component
-            data-component-name="User"
-            data-props='{"name": "Emma", "description": "Orange-haired girl who is very happy all of the time for some strange reason", "interests": ["Making her siblings happy"]}'
-            data-alias="Emma"
-        ></div>
+        <!-- This HTML code will tell JavaScript to insert the header component into this div -->
+        <div data-component data-component-name="Header" data-props='{}''></div>
     </body>
 </html>

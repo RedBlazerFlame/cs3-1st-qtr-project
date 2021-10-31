@@ -1,0 +1,35 @@
+/* As the name of the file suggests, global.css applies to all pages */
+
+/* This will ensure that the dimensions of all elements is based on the sum of the dimensions of the content, padding, and border */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    /* This is the font-size that rem is relative to */
+    font-size: clamp(6px, 1vw, 12px);
+
+    /* Declaring CSS Variables */
+    /* TODO Declare Variables (Primary colors and such) */
+}
+
+body {
+    /* display:grid; allows for complex layouts using the CSS grid system */
+    display: -ms-grid;
+    display: grid;
+
+    /* Subdividing the page into a header, content, and footer section */
+    grid-template-rows: 10vh auto 10vh;
+    grid-template-columns: auto;
+    grid-template-areas: 
+    "header"
+    "content"
+    "footer"
+    ;
+
+    /* Setting a global font family */
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* Removing margins in the body*/
+    margin: 0;
+}

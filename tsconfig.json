@@ -2,11 +2,10 @@
     "compileOnSave": true,
     "compilerOptions": {
         "forceConsistentCasingInFileNames": true,
-        "importHelpers": true,
         "removeComments": true,
         "skipDefaultLibCheck": true,
         "watch": true,
-        "strict": true,
+        "strict": false,
         "target": "ES6",
         "module": "ESNext",
         "moduleResolution": "node",

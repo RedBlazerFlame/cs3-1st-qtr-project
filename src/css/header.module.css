@@ -1,0 +1,55 @@
+.header {
+    /*This will place the header component in its proper place in the main grid*/
+    grid-area: header;
+
+    /*This will ensure that the children of the header are laid out horizontally*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.header a {
+    /* This will clear any text decorations from descendant anchor tags */
+    text-decoration: none;
+    color: black;
+}
+
+.header > .headerLeft {
+    /*This will ensure that the children of the left side of the header are laid out horizontally*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header > .headerLeft > .headerIcon {
+    width: 8vh;
+}
+
+.header > .headerLeft > .title {
+    font-size: 3rem;
+    padding-left: 2vw;
+}
+
+.header > .searchbar {
+    /*This will ensure that the children of the left side of the header are laid out horizontally*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+
+    /* This will resize the searchbar */
+    width: 30vw;
+    margin: 1vh;
+    padding: 2vh;
+
+    /* This will apply a rounded border on the searchbar */
+    border: 0.2vh solid black;
+    border-radius: 4vh;
+}
+
+.header > .searchbar > #headerSearchbarInput {
+    border: none;
+    outline: none;
+}
