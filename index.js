@@ -11,11 +11,12 @@ import { createServer } from "http";
 import express from "express";
 import { readFile } from "fs/promises";
 const PORT = process.env.PORT || 4000;
+const ROOT_FOLDER_DIR_NAME = "PotassiumDeVera1stQtrProj";
 const app = express();
 const httpServer = createServer(app);
 app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        let homePageData = yield readFile("./src/htdocs/index.html", {
+        let homePageData = yield readFile(`./${ROOT_FOLDER_DIR_NAME}/htdocs/index.html`, {
             encoding: "utf-8",
         });
         res.send(homePageData);
@@ -24,8 +25,8 @@ app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         console.error("Error: cannot GET /");
     }
 }));
-app.use(express.static("./src/htdocs"));
-app.use(express.static("./src"));
+app.use(express.static(`./${ROOT_FOLDER_DIR_NAME}/htdocs`));
+app.use(express.static(`./${ROOT_FOLDER_DIR_NAME}`));
 httpServer.listen(PORT, () => {
     console.log(`http://localhost:${PORT}/`);
 });
