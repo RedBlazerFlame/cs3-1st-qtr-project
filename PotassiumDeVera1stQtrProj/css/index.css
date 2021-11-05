@@ -77,6 +77,66 @@ main.content > section.header > div.headerContent > div.headerText > p.descripti
 
 main.content > section.latestArticles {
     grid-area: latestArticles;
+    margin: 0 2vw;
+}
+
+main.content > section.latestArticles > h1 {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+main.content > section.latestArticles > div#articlesList {
+    /* This will ensure that the articles will be laid out vertically */
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main.content > section.latestArticles > div#articlesList > div.article {
+    /* This will properly layout the images and text in the article preview */
+    display: grid;
+    grid-template-columns: 20vw auto;
+    grid-template-rows: repeat(auto, 4);
+    grid-template-areas: 
+    "image title"
+    "image author"
+    "image description"
+    "image redirectButton"
+    ;
+
+    padding: 1vw;
+    margin: 5px 0;
+    background-color: var(--primary-color);
+
+    /*This will apply a border around the article*/
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+div.article > div.image {
+    grid-area: image;
+}
+
+div.article > div.image > img {
+    max-width: 18vw;
+    max-height: 18vw;
+}
+
+div.article > h2.title {
+    grid-area: title;
+}
+
+div.article > p.author {
+    grid-area: author;
+}
+
+div.article > p.description {
+    grid-area: description;
+}
+
+div.article > a.redirectButton {
+    grid-area: button;
+    color: black;
+    margin-right: 10px;
 }
 
 /* This will apply for smaller screens */

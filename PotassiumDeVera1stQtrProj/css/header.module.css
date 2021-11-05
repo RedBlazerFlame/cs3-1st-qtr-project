@@ -34,9 +34,10 @@
 }
 
 .header[data-component] > .headerLeft > .title {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-size: 3rem;
-    padding-left: 2vw;
     font-weight: bolder;
+    padding-left: 2vw;
     color: var(--secondary-color);
 }
 
