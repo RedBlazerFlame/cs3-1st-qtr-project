@@ -1,0 +1,63 @@
+@import "global.css";
+
+.footer[data-component] {
+    background-color: var(--tertiary-color);
+    
+    /*This will properly lay-out the footer*/
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 10vh auto 10vh auto;
+    grid-template-areas: 
+    "siteBrand"
+    "aboutUsLink"
+    "⭐"
+    "copyright"
+    ;
+
+    color: var(--primary-color);
+    font-size: 1rem;
+
+    margin-top: 5vh;
+
+    /* This will create a gradient on top of the footer so that the change in color won't be as drastic */
+    border-top: 5vh solid var(--secondary-color);
+}
+
+.footer[data-component] > div.siteBrand {
+    grid-area: siteBrand;
+    height: 10vh;
+
+    /* This will put the image and site name beside one another */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer[data-component] > div.siteBrand > img.footerIcon {
+    width: 8vh;
+    margin-left: 1vw;
+}
+
+.footer[data-component] > div.siteBrand > p.title {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    font-weight: bolder;
+    padding-left: 2vw;
+    color: var(--primary-color);
+}
+
+.footer[data-component] > a.aboutUsLink {
+    grid-area: aboutUsLink;
+    margin: 0 auto 0 2vw;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.footer[data-component] > div.copyright {
+    grid-area: copyright;
+    margin: 0 auto 2vh 2vw;
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+}

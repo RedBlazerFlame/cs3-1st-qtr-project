@@ -2,9 +2,10 @@ main.content {
     /* Subdividing the content into subsections */
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 60vh auto;
+    grid-template-rows: 60vh 4vh auto;
     grid-template-areas:
     "header"
+    "headerCaption"
     "latestArticles"
     ;
 }
@@ -75,6 +76,12 @@ main.content > section.header > div.headerContent > div.headerText > p.descripti
     font-size: max(1.5rem, 10px);
 }
 
+main.content > section.headerCaption {
+    grid-area: headerCaption;
+    margin: 0 2vw;
+    font-size: 1.25rem;
+}
+
 main.content > section.latestArticles {
     grid-area: latestArticles;
     margin: 0 2vw;
@@ -86,7 +93,7 @@ main.content > section.latestArticles > h1 {
 
 main.content > section.latestArticles > div#articlesList {
     /* This will ensure that the articles will be laid out vertically */
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
@@ -123,6 +130,8 @@ div.article > div.image > img {
 
 div.article > h2.title {
     grid-area: title;
+    font-family: 'Poppins', sans-serif;
+    color: var(--secondary-color);
 }
 
 div.article > p.author {
@@ -155,5 +164,31 @@ div.article > a.redirectButton {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    /* The article icons will be clipped on smaller devices */
+    main.content > section.latestArticles > div#articlesList > div.article {
+        /* This will properly layout the images and text in the article preview */
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(auto, 4);
+        grid-template-areas: 
+        "title"
+        "author"
+        "description"
+        "redirectButton"
+        ;
+    
+        padding: 1vw;
+        margin: 5px 0;
+        background-color: var(--primary-color);
+    
+        /*This will apply a border around the article*/
+        border: 2px solid black;
+        border-radius: 20px;
+    }
+
+    div.article > div.image {
+        display: none;
     }
 }
