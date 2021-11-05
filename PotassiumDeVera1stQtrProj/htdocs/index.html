@@ -20,6 +20,7 @@
         <script src="/scripts/global.js" type="module" defer></script>
         <link rel="icon" href="/images/logo1.png" type="image/png">
         <link rel="stylesheet" href="/css/global.css" type="text/css"/>
+        <link rel="stylesheet" href="/css/index.css" type="text/css"/>
         <link rel="stylesheet" href="/css/header.module.css" type="text/css"/>
         <title>The Climate Post</title>
     </head>
@@ -27,6 +28,21 @@
         <!-- This HTML code will tell JavaScript to insert the header component into this div -->
         <div data-component data-component-name="Header" data-props='{}''></div>
 
-        
+        <main class="content">
+            <section class="header">
+                <!-- Note: I decided not to use CSS background-image so that I can manipulate the image using JavaScript (simply by changing the src attribute in the JavaScript code) -->
+                <div class="backgroundImage">
+                    <img src="/images/homePageHeader3.png" alt="This is an image of a forest" title="Source: DaveyBaker. (2013, October 15). Green forest 1 of 3[Image]. DeviantArt. https://www.deviantart.com/daveybaker/art/Green-forest-1-of-3-407309171">
+                </div>
+                <div class="headerContent">
+                    <div class="headerText">
+                        <h1 class="title">The <span class="secondaryColor">Climate</span> Post</h1>
+                        <p class="description">Your Online Resource for
+                            <span class="secondaryColor">Climate Change</span></p>
+                    </div>
+                </div>
+            </section>
+            <section class="latestArticles"></section>
+        </main>
     </body>
 </html>

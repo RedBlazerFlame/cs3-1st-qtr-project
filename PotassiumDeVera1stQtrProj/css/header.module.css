@@ -1,6 +1,6 @@
 @import "global.css";
 
-.header {
+.header[data-component] {
     /*Setting the background color to the primary color*/
     background-color: var(--primary-color);
 
@@ -14,13 +14,13 @@
     align-content: center;
 }
 
-.header a {
+.header[data-component] a {
     /* This will clear any text decorations from descendant anchor tags */
     text-decoration: none;
     color: black;
 }
 
-.header > .headerLeft {
+.header[data-component] > .headerLeft {
     /*This will ensure that the children of the left side of the header are laid out horizontally*/
     display: flex;
     flex-direction: row;
@@ -28,19 +28,19 @@
     align-items: center;
 }
 
-.header > .headerLeft > .headerIcon {
+.header[data-component] > .headerLeft > .headerIcon {
     width: 8vh;
     margin-left: 1vw;
 }
 
-.header > .headerLeft > .title {
+.header[data-component] > .headerLeft > .title {
     font-size: 3rem;
     padding-left: 2vw;
     font-weight: bolder;
     color: var(--secondary-color);
 }
 
-.header > .searchbar {
+.header[data-component] > .searchbar {
     background-color: white;
 
     /*This will ensure that the children of the left side of the header are laid out horizontally*/
@@ -50,7 +50,7 @@
     align-content: center;
 
     /* This will resize the searchbar */
-    width: 30vw;
+    width: minmax(40vw,240px);
     margin: 1vh;
     padding: 2vh;
 
@@ -59,10 +59,10 @@
     border-radius: 4vh;
 }
 
-.header > .searchbar > #headerSearchbarInput {
+.header[data-component] > .searchbar > #headerSearchbarInput {
     border: none;
     outline: none;
     background-color: transparent;
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
