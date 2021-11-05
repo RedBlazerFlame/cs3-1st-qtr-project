@@ -16,7 +16,26 @@ const Header: FC<HeaderProps> = (props: HeaderProps) => {
             <img id="searchBarIcon" src="/images/magnifyingGlass1.svg" alt="Search Bar Icon" title="Made by Gabee De Vera"/>
         </div>
         `,
-        callbacks: {},
+        callbacks: {
+            onMount: ({
+                component,
+                oldState,
+            }: {
+                component: HTMLElement;
+                oldState: Object;
+            }) => {
+                // Once the component is rendered, attach an event listener to the searchbar so that users can search
+                let searchBarInput: HTMLInputElement = document.getElementById(
+                    "headerSearchbarInput"
+                ) as HTMLInputElement;
+                searchBarInput.addEventListener("change", (ev) => {
+                    const inputText = (ev.target as HTMLInputElement).value;
+
+                    // Redirecting the user to the searchpage and displaying results
+                    window.location.replace(`/search?q=${inputText}`);
+                });
+            },
+        },
         state: props,
     };
 };

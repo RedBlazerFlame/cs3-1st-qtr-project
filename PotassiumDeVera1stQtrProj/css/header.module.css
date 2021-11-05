@@ -1,4 +1,9 @@
+@import "global.css";
+
 .header {
+    /*Setting the background color to the primary color*/
+    background-color: var(--primary-color);
+
     /*This will place the header component in its proper place in the main grid*/
     grid-area: header;
 
@@ -25,14 +30,19 @@
 
 .header > .headerLeft > .headerIcon {
     width: 8vh;
+    margin-left: 1vw;
 }
 
 .header > .headerLeft > .title {
     font-size: 3rem;
     padding-left: 2vw;
+    font-weight: bolder;
+    color: var(--secondary-color);
 }
 
 .header > .searchbar {
+    background-color: white;
+
     /*This will ensure that the children of the left side of the header are laid out horizontally*/
     display: flex;
     flex-direction: row;
@@ -52,4 +62,7 @@
 .header > .searchbar > #headerSearchbarInput {
     border: none;
     outline: none;
+    background-color: transparent;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
 }

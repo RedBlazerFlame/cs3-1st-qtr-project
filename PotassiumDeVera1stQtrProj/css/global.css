@@ -1,4 +1,7 @@
-/* As the name of the file suggests, global.css applies to all pages */
+/* As the name of the file suggests, global.css applies to all pages in the website */
+
+/* Importing fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap');
 
 /* This will ensure that the dimensions of all elements is based on the sum of the dimensions of the content, padding, and border */
 * {
@@ -9,8 +12,10 @@
     /* This is the font-size that rem is relative to */
     font-size: clamp(6px, 1vw, 12px);
 
-    /* Declaring CSS Variables */
-    /* TODO Declare Variables (Primary colors and such) */
+    /* Declaring CSS Variables for the color scheme */
+    --primary-color: #FBFEE6;
+    --secondary-color: #68B16A;
+    --tertiary-color: #093E23;
 }
 
 body {
@@ -28,8 +33,13 @@ body {
     ;
 
     /* Setting a global font family */
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
 
     /* Removing margins in the body*/
     margin: 0;
+}
+
+main.content {
+    grid-area: content;
+    font-size: 1.5rem;
 }

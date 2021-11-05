@@ -25,6 +25,7 @@ const componentStates = new Map([]);
             componentState: componentStates.get(element.dataset.id),
         })));
         customComponents.forEach((element, index) => {
+            var _a, _b;
             element.innerHTML = generatedData[index].componentData;
             ["click", "change", "input"].forEach((eventType) => {
                 element
@@ -37,6 +38,11 @@ const componentStates = new Map([]);
                         oldState: componentStates.get(element.dataset.id),
                     });
                 });
+            });
+            (_b = (_a = generatedData[index].callbacks).onMount) === null || _b === void 0 ? void 0 : _b.call(_a, {
+                component: element,
+                event: null,
+                oldState: componentStates.get(element.dataset.id),
             });
         });
     }))();

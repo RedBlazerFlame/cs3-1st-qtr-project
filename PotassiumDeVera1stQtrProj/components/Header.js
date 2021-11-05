@@ -12,7 +12,15 @@ const Header = (props) => {
             <img id="searchBarIcon" src="/images/magnifyingGlass1.svg" alt="Search Bar Icon" title="Made by Gabee De Vera"/>
         </div>
         `,
-        callbacks: {},
+        callbacks: {
+            onMount: ({ component, oldState, }) => {
+                let searchBarInput = document.getElementById("headerSearchbarInput");
+                searchBarInput.addEventListener("change", (ev) => {
+                    const inputText = ev.target.value;
+                    window.location.replace(`/search?q=${inputText}`);
+                });
+            },
+        },
         state: props,
     };
 };

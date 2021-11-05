@@ -72,6 +72,13 @@ const componentStates: Map<string, Object> = new Map([]);
                             });
                     });
             });
+
+            // Running the "onMount" method
+            generatedData[index].callbacks.onMount?.({
+                component: element,
+                event: null,
+                oldState: componentStates.get(element.dataset.id),
+            });
         });
     })();
 }
