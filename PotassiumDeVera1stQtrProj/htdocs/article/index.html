@@ -35,8 +35,13 @@
         <div data-component data-component-name="Header" data-props="{}"></div>
 
         <main class="content">
+            <!-- This is the top banner. JavaScript will render in the HTML code here (the HTML code for the banner can be found in components/ImageHeader.ts) -->
             <section class="imageHeader"></section>
+
+            <!-- This is the citation for the image in the banner. JavaScript will render in the HTML code here (the code that renders this element can be found in scripts/article.ts) -->
             <section class="headerCaption"></section>
+
+            <!-- This is the breadcrumb. It is used to make site navigation more intuitive. JavaScript will render the HTML code here too -->
             <section class="breadcrumb">
                 <ul class="breadcrumb">
                     <li><a href="/">Home</a></li>
@@ -44,6 +49,8 @@
                     <li id="breadcrumbCurrentPage"></li>
                 </ul>
             </section>
+
+            <!-- This is the article header. JavaScript will render new HTML here as well -->
             <section class="articleHeader">
                 <h1 id="articleTitle">Title</h1>
                 <p>
@@ -51,6 +58,8 @@
                 </p>
                 <p id="articlePublicationDate">Unknown Publication Date</p>
             </section>
+
+            <!-- This section contains the actual article. JavaScript will get the HTML code from an HTML file in the articles/ folder and then insert it here -->
             <section class="articleContent"></section>
         </main>
 
