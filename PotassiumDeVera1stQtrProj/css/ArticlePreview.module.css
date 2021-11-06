@@ -11,12 +11,14 @@ div.article {
     ;
 
     padding: 1vw;
-    margin: 5px 0;
+    margin: 16px 0;
     background-color: var(--primary-color);
 
     /*This will apply a border around the article*/
-    border: 2px solid black;
     border-radius: 20px;
+
+    /*This will apply a soft shadow*/
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.03), 0px 4px 4px rgba(0,0,0,0.06), 0px 8px 8px rgba(0,0,0,0.09), 0px 16px 16px rgba(0,0,0,0.12), 0px 32px 32px rgba(0,0,0,0.15);
 }
 
 div.article > div.image {
@@ -68,11 +70,13 @@ div.article > a.redirectButton {
         background-color: var(--primary-color);
 
         /*This will apply a border around the article*/
-        border: 2px solid black;
         border-radius: 20px;
 
         /* Making the text bigger on smaller screens */
         font-size: 14px;
+
+        /*This will apply a soft shadow*/
+        box-shadow: 0px 2px 2px rgba(0,0,0,0.03), 0px 4px 4px rgba(0,0,0,0.06), 0px 8px 8px rgba(0,0,0,0.09), 0px 16px 16px rgba(0,0,0,0.12), 0px 32px 32px rgba(0,0,0,0.15);
     }
 
     div.article > div.image {

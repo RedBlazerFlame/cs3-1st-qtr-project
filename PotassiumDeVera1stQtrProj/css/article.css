@@ -27,6 +27,7 @@ main.content > section.breadcrumb {
 
 /* This will remove the default bullets in the list */
 main.content > section.breadcrumb > ul.breadcrumb {
+    padding: 0;
     list-style-type: none;
 }
 

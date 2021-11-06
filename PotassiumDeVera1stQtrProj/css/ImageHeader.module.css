@@ -47,12 +47,34 @@ section.imageHeader > div.headerContent > div.headerText {
     padding: 20px;
     padding-right: 40px;
     height: auto;
+    width: auto;
 
     /* This will center the text in the box */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: left;
+
+    /*This will apply a soft shadow*/
+    box-shadow: 0px 2px 2px rgba(133, 90, 90, 0.06), 0px 4px 4px rgba(0,0,0,0.12), 0px 8px 8px rgba(0,0,0,0.18), 0px 16px 16px rgba(0,0,0,0.24), 0px 32px 32px rgba(0,0,0,0.30);
+
+    position: relative;
+    top: 0vw;
+
+    /*TODO This will animate the title*/
+    animation: slideIn 2s ease-out 0s 1;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        top: -2vw;
+    }
+
+    100% {
+        opacity: 1;
+        top: 0vw;
+    }
 }
 
 section.imageHeader > div.headerContent > div.headerText > h1.title {
@@ -82,5 +104,8 @@ section.imageHeader > div.headerContent > div.headerText > p.description {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        /*This will apply a soft shadow*/
+        box-shadow: 0px 2px 2px rgba(133, 90, 90, 0.06), 0px 4px 4px rgba(0,0,0,0.12), 0px 8px 8px rgba(0,0,0,0.18), 0px 16px 16px rgba(0,0,0,0.24), 0px 32px 32px rgba(0,0,0,0.30);
     }
 }
