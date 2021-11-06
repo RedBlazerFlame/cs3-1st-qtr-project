@@ -1,0 +1,20 @@
+{
+    "articles": {
+        "how-food-waste-affects-climate-change": {
+            "title": "How Food Waste Affects Climate Change",
+            "author": "Gabee De Vera",
+            "datePublished": "September 27, 2021",
+            "description": "description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description ",
+            "icon": {
+                "alt": "Otogi",
+                "title": "Otogi",
+                "url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.hmv.co.jp%2Fimage%2Fjacket%2F400%2F93%2F3%2F6%2F936.jpg&f=1&nofb=1"
+            },
+            "banner": {
+                "alt": "Bokuramadaunderground",
+                "title": "Bokuramadaunderground",
+                "url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FGrBrQA0DGyE%2Fmaxresdefault.jpg&f=1&nofb=1"
+            }
+        }
+    }
+}
