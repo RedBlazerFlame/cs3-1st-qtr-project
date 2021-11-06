@@ -41,6 +41,7 @@
         <div data-component data-component-name="Header" data-props="{}"></div>
 
         <main class="content">
+            <!-- This is the top banner. JavaScript will render this component (the code that does this can be found in components/ImageHeader.ts) -->
             <section
                 data-component=""
                 data-component-name="ImageHeader"
@@ -52,6 +53,8 @@
                 "showTitle": true
                 }'
             ></section>
+
+            <!-- This is the citation under the banner -->
             <section class="headerCaption">
                 <p class="headerImageCitation">
                     Image Source: DaveyBaker. (2013, October 15).
@@ -71,7 +74,7 @@
             </section>
         </main>
 
-        <!-- This HTML code will tell JavaScript to insert the footer component into this div -->
+        <!-- This HTML code will tell JavaScript to insert the footer component into this div. The code that inserts the footer component can be found in components/Footer.ts -->
         <div data-component data-component-name="Footer" data-props="{}"></div>
     </body>
 </html>
