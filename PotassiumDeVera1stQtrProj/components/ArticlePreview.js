@@ -4,7 +4,7 @@ const ArticlePreview = (props) => {
         <div class="article">
             <div class="image">
                 <img src="${props.icon.url}" ${typeof props.icon.alt === "string" ? `alt=${props.icon.alt}` : ""} ${typeof props.icon.title === "string"
-            ? `title=${props.icon.title}`
+            ? `title="${props.icon.title}"`
             : ""} />
             </div>
             <h2 class="title">${props.title}</h2>
