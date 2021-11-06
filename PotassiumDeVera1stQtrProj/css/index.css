@@ -10,72 +10,6 @@ main.content {
     ;
 }
 
-main.content > section.header {
-    grid-area: header;
-    overflow: hidden;
-    position: relative;
-    color: white;
-}
-
-main.content > section.header > div.backgroundImage {
-    /* This will center the background image horizontally and vertically (This answer was written by Alex on this stackoverflow post: https://stackoverflow.com/questions/4416130/how-to-center-a-div-vertically#4416166 ) */
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%) ;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-main.content > section.header > div.backgroundImage > img {
-    min-width: 100vw;
-    min-height: 60vh;
-}
-
-main.content > section.header > div.headerContent {
-    /* This will resize the header content to fill up the whole header */
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    /* This will center the contents of the header */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-}
-
-main.content > section.header > div.headerContent > div.headerText {
-    background-color: rgba(0,0,0,0.75);
-
-    /* This will place the header text somewhere towards the left */
-    margin: auto auto auto 5vw;
-    padding: 20px;
-    padding-right: 40px;
-    height: auto;
-
-    /* This will center the text in the box */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: left;
-}
-
-main.content > section.header > div.headerContent > div.headerText > h1.title {
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
-    font-size: max(4rem, 30px);
-    margin: 1px;
-}
-
-main.content > section.header > div.headerContent > div.headerText > p.description {
-    font-family: 'Open Sans', sans-serif;
-    font-size: max(1.5rem, 10px);
-}
-
 main.content > section.headerCaption {
     grid-area: headerCaption;
     margin: 0 2vw;
@@ -89,6 +23,7 @@ main.content > section.latestArticles {
 
 main.content > section.latestArticles > h1 {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: clamp(3rem, 2.5rem, 12px);
 }
 
 main.content > section.latestArticles > div#articlesList {
@@ -98,97 +33,7 @@ main.content > section.latestArticles > div#articlesList {
     align-items: center;
 }
 
-main.content > section.latestArticles > div#articlesList > div.article {
-    /* This will properly layout the images and text in the article preview */
-    display: grid;
-    grid-template-columns: 20vw auto;
-    grid-template-rows: repeat(auto, 4);
-    grid-template-areas: 
-    "image title"
-    "image author"
-    "image description"
-    "image redirectButton"
-    ;
-
-    padding: 1vw;
-    margin: 5px 0;
-    background-color: var(--primary-color);
-
-    /*This will apply a border around the article*/
-    border: 2px solid black;
-    border-radius: 20px;
-}
-
-div.article > div.image {
-    grid-area: image;
-}
-
-div.article > div.image > img {
-    max-width: 18vw;
-    max-height: 18vw;
-}
-
-div.article > h2.title {
-    grid-area: title;
-    font-family: 'Poppins', sans-serif;
-    color: var(--secondary-color);
-}
-
-div.article > p.author {
-    grid-area: author;
-}
-
-div.article > p.description {
-    grid-area: description;
-}
-
-div.article > a.redirectButton {
-    grid-area: button;
-    color: black;
-    margin-right: 10px;
-}
-
 /* This will apply for smaller screens */
 @media screen and (max-width: 800px) {
-    main.content > section.header > div.headerContent > div.headerText {
-        background-color: rgba(0,0,0,0.75);
     
-        /* This will place the header text in the center */
-        margin: auto;
-        padding: 20px;
-        padding-right: 40px;
-        height: auto;
-    
-        /* This will center the text in the box */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* The article icons will be clipped on smaller devices */
-    main.content > section.latestArticles > div#articlesList > div.article {
-        /* This will properly layout the images and text in the article preview */
-        display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: repeat(auto, 4);
-        grid-template-areas: 
-        "title"
-        "author"
-        "description"
-        "redirectButton"
-        ;
-    
-        padding: 1vw;
-        margin: 5px 0;
-        background-color: var(--primary-color);
-    
-        /*This will apply a border around the article*/
-        border: 2px solid black;
-        border-radius: 20px;
-    }
-
-    div.article > div.image {
-        display: none;
-    }
 }

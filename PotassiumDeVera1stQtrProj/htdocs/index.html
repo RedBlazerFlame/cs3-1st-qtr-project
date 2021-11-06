@@ -22,8 +22,18 @@
         <link rel="icon" href="/images/logo1.png" type="image/png" />
         <link rel="stylesheet" href="/css/global.css" type="text/css" />
         <link rel="stylesheet" href="/css/index.css" type="text/css" />
-        <link rel="stylesheet" href="/css/header.module.css" type="text/css" />
-        <link rel="stylesheet" href="/css/footer.module.css" type="text/css" />
+        <link rel="stylesheet" href="/css/Header.module.css" type="text/css" />
+        <link rel="stylesheet" href="/css/Footer.module.css" type="text/css" />
+        <link
+            rel="stylesheet"
+            href="/css/ImageHeader.module.css"
+            type="text/css"
+        />
+        <link
+            rel="stylesheet"
+            href="/css/ArticlePreview.module.css"
+            type="text/css"
+        />
         <title>The Climate Post</title>
     </head>
     <body>
@@ -31,8 +41,18 @@
         <div data-component data-component-name="Header" data-props="{}"></div>
 
         <main class="content">
-            <section class="header">
-                <!-- Note: I decided not to use CSS background-image so that I can manipulate the image using JavaScript (simply by changing the src attribute in the JavaScript code) -->
+            <section
+                data-component=""
+                data-component-name="ImageHeader"
+                data-props='{"image": {
+                "src": "/images/homePageHeader3.png",
+                "alt": "This is an image of a forest",
+                "title": "Source: DaveyBaker. (2013, October 15). Green forest 1 of 3[Image]. DeviantArt. https://www.deviantart.com/daveybaker/art/Green-forest-1-of-3-407309171"
+                },
+                "showTitle": true
+                }'
+            ></section>
+            <!--section class="header">
                 <div class="backgroundImage">
                     <img
                         src="/images/homePageHeader3.png"
@@ -51,7 +71,7 @@
                         </p>
                     </div>
                 </div>
-            </section>
+            </section-->
             <section class="headerCaption">
                 <p class="headerImageCitation">
                     Image Source: DaveyBaker. (2013, October 15).

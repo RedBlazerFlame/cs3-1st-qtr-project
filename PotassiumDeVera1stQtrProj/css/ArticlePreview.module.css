@@ -1,0 +1,81 @@
+div.article {
+    /* This will properly layout the images and text in the article preview */
+    display: grid;
+    grid-template-columns: 20vw auto;
+    grid-template-rows: repeat(auto, 4);
+    grid-template-areas: 
+    "image title"
+    "image author"
+    "image description"
+    "image redirectButton"
+    ;
+
+    padding: 1vw;
+    margin: 5px 0;
+    background-color: var(--primary-color);
+
+    /*This will apply a border around the article*/
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+div.article > div.image {
+    grid-area: image;
+}
+
+div.article > div.image > img {
+    max-width: 18vw;
+    max-height: 18vw;
+}
+
+div.article > h2.title {
+    grid-area: title;
+    font-family: 'Poppins', sans-serif;
+    color: var(--secondary-color);
+}
+
+div.article > p.author {
+    grid-area: author;
+}
+
+div.article > p.description {
+    grid-area: description;
+}
+
+div.article > a.redirectButton {
+    grid-area: button;
+    color: black;
+    margin-right: 10px;
+}
+
+/* This will apply for smaller screens */
+@media screen and (max-width: 800px) {
+    /* The article icons will be clipped on smaller devices */
+    div.article {
+        /* This will properly layout the images and text in the article preview */
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(auto, 4);
+        grid-template-areas: 
+        "title"
+        "author"
+        "description"
+        "redirectButton"
+        ;
+
+        padding: 1vw;
+        margin: 5px 0;
+        background-color: var(--primary-color);
+
+        /*This will apply a border around the article*/
+        border: 2px solid black;
+        border-radius: 20px;
+
+        /* Making the text bigger on smaller screens */
+        font-size: 14px;
+    }
+
+    div.article > div.image {
+        display: none;
+    }
+}
