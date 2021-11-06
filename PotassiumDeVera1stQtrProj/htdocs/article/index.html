@@ -15,18 +15,27 @@
             defer
         ></script>
         <script src="/scripts/global.js" type="module" defer></script>
+        <script src="/scripts/article.js" type="module" defer></script>
         <link rel="icon" href="/images/logo1.png" type="image/png" />
         <link rel="stylesheet" href="/css/global.css" type="text/css" />
         <link rel="stylesheet" href="/css/article.css" type="text/css" />
-        <link rel="stylesheet" href="/css/header.module.css" type="text/css" />
-        <link rel="stylesheet" href="/css/footer.module.css" type="text/css" />
+        <link rel="stylesheet" href="/css/Header.module.css" type="text/css" />
+        <link rel="stylesheet" href="/css/Footer.module.css" type="text/css" />
+        <link
+            rel="stylesheet"
+            href="/css/ImageHeader.module.css"
+            type="text/css"
+        />
         <title>Article</title>
     </head>
     <body>
         <!-- This HTML code will tell JavaScript to insert the header component into this div -->
         <div data-component data-component-name="Header" data-props="{}"></div>
 
-        <main class="content">Owaranai Yume Wo</main>
+        <main class="content">
+            <section class="imageHeader"></section>
+            Owaranai Yume Wo
+        </main>
 
         <!-- This HTML code will tell JavaScript to insert the footer component into this div -->
         <div data-component data-component-name="Footer" data-props="{}"></div>

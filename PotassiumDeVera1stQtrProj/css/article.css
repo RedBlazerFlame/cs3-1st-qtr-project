@@ -1,0 +1,12 @@
+main.content {
+    /* Subdividing the content into subsections */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60vh 4vh 6vh auto;
+    grid-template-areas:
+    "header"
+    "headerCaption"
+    "breadcrumb"
+    "articleContent"
+    ;
+}

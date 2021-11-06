@@ -1,11 +1,11 @@
-section.imageHeader[data-component] {
+section.imageHeader {
     grid-area: header;
     overflow: hidden;
     position: relative;
     color: white;
 }
 
-section.imageHeader[data-component] > div.backgroundImage {
+section.imageHeader > div.backgroundImage {
     /* This will center the background image horizontally and vertically (This answer was written by Alex on this stackoverflow post: https://stackoverflow.com/questions/4416130/how-to-center-a-div-vertically#4416166 ) */
     position: relative;
     top: 50%;
@@ -17,12 +17,12 @@ section.imageHeader[data-component] > div.backgroundImage {
     justify-content: center;
 }
 
-section.imageHeader[data-component] > div.backgroundImage > img {
+section.imageHeader > div.backgroundImage > img {
     min-width: 100vw;
     min-height: 60vh;
 }
 
-section.imageHeader[data-component] > div.headerContent {
+section.imageHeader > div.headerContent {
     /* This will resize the header content to fill up the whole header */
     position: absolute;
     top: 0;
@@ -39,7 +39,7 @@ section.imageHeader[data-component] > div.headerContent {
     box-shadow: inset 0px -20px 10px -10px rgba(255,255,255,0.25), inset 0px -40px 20px -20px rgba(255,255,255,0.5), inset 0px -80px 40px -40px rgba(255,255,255,1);
 }
 
-section.imageHeader[data-component] > div.headerContent > div.headerText {
+section.imageHeader > div.headerContent > div.headerText {
     background-color: rgba(0,0,0,0.75);
 
     /* This will place the header text somewhere towards the left */
@@ -55,20 +55,20 @@ section.imageHeader[data-component] > div.headerContent > div.headerText {
     align-items: left;
 }
 
-section.imageHeader[data-component] > div.headerContent > div.headerText > h1.title {
+section.imageHeader > div.headerContent > div.headerText > h1.title {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-size: max(4rem, 30px);
     margin: 1px;
 }
 
-section.imageHeader[data-component] > div.headerContent > div.headerText > p.description {
+section.imageHeader > div.headerContent > div.headerText > p.description {
     font-family: 'Open Sans', sans-serif;
     font-size: max(1.5rem, 10px);
 }
 
 /* This will apply to smaller screens */
 @media screen and (max-width: 800px) {
-    section.imageHeader[data-component] > div.headerContent > div.headerText {
+    section.imageHeader > div.headerContent > div.headerText {
         background-color: rgba(0,0,0,0.75);
     
         /* This will place the header text in the center */
