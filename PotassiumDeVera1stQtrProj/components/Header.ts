@@ -32,7 +32,7 @@ const Header: FC<HeaderProps> = (props: HeaderProps) => {
                     const inputText = (ev.target as HTMLInputElement).value;
 
                     // Redirecting the user to the searchpage and displaying results
-                    window.location.replace(`/search?q=${inputText}`);
+                    window.location.replace(`/articleList?q=${inputText}`);
                 });
             },
         },

@@ -11,6 +11,8 @@ import ImageHeader from "../components/ImageHeader.js";
 const urlParameters = new window.URLSearchParams(window.location.search);
 const articleId = urlParameters.get("id");
 const imageHeader = document.querySelector("section.imageHeader");
+const headerCaption = document.querySelector("section.headerCaption");
+const breadcrumbCurrentPage = document.getElementById("breadcrumbCurrentPage");
 (() => __awaiter(void 0, void 0, void 0, function* () {
     const articlesJSON = yield fetch("/json/articles.json").then((res) => res.json());
     const articleData = articlesJSON.articles[articleId];
@@ -22,4 +24,6 @@ const imageHeader = document.querySelector("section.imageHeader");
         },
         showTitle: false,
     }).componentData;
+    headerCaption.innerHTML = articleData.headerCaption;
+    breadcrumbCurrentPage.innerHTML = articleData.title;
 }))();

@@ -2,11 +2,40 @@ main.content {
     /* Subdividing the content into subsections */
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 60vh 4vh 6vh auto;
+    grid-template-rows: 60vh 4vh 8vh auto 6vh auto;
     grid-template-areas:
     "header"
     "headerCaption"
     "breadcrumb"
+    "articleHeader"
+    "spacer"
     "articleContent"
     ;
+}
+
+main.content > section.headerCaption {
+    grid-area: headerCaption;
+    margin: 0 2vw;
+    font-size: 1.25rem;
+}
+
+main.content > section.breadcrumb {
+    grid-area: breadcrumb;
+    margin: 0 2vw;
+    font-size: 1.5rem;
+}
+
+/* This will remove the default bullets in the list */
+main.content > section.breadcrumb > ul.breadcrumb {
+    list-style-type: none;
+}
+
+/* This will ensure that each list entry in the breadcrumb is beside one another */
+main.content > section.breadcrumb > ul.breadcrumb > li {
+    display: inline;
+}
+
+/* This will put a space between each entry in the list by placing a slash ("/") before all list items except the first one */
+main.content > section.breadcrumb > ul.breadcrumb > li:not(:first-child)::before {
+    content: " / ";
 }

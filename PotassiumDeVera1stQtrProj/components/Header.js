@@ -17,7 +17,7 @@ const Header = (props) => {
                 let searchBarInput = document.getElementById("headerSearchbarInput");
                 searchBarInput.addEventListener("change", (ev) => {
                     const inputText = ev.target.value;
-                    window.location.replace(`/search?q=${inputText}`);
+                    window.location.replace(`/articleList?q=${inputText}`);
                 });
             },
         },

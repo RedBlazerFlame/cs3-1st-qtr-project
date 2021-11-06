@@ -7,6 +7,13 @@ const articleId = urlParameters.get("id");
 
 // Getting a reference to HTML Elements
 const imageHeader: HTMLElement = document.querySelector("section.imageHeader");
+const headerCaption: HTMLElement = document.querySelector(
+    "section.headerCaption"
+);
+
+const breadcrumbCurrentPage: HTMLLIElement = document.getElementById(
+    "breadcrumbCurrentPage"
+) as HTMLLIElement;
 
 // Wrapping code in an async function so that we can await asynchronous responses
 (async () => {
@@ -27,4 +34,10 @@ const imageHeader: HTMLElement = document.querySelector("section.imageHeader");
         },
         showTitle: false,
     }).componentData;
+
+    // Updating Header Caption
+    headerCaption.innerHTML = articleData.headerCaption;
+
+    // Updating Breadcrumb
+    breadcrumbCurrentPage.innerHTML = articleData.title;
 })();
