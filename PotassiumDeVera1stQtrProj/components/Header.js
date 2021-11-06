@@ -19,6 +19,11 @@ const Header = (props) => {
                     const inputText = ev.target.value;
                     window.location.replace(`/articleList?q=${inputText}`);
                 });
+                let searchBarIcon = document.getElementById("searchBarIcon");
+                searchBarIcon.addEventListener("click", (_) => {
+                    const inputText = searchBarInput.value;
+                    window.location.replace(`/articleList${inputText !== "" ? `?q=${inputText}` : ""}`);
+                });
             },
         },
         state: props,

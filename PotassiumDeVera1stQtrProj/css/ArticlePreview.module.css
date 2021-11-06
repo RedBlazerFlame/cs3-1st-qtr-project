@@ -1,7 +1,7 @@
 div.article {
     /* This will properly layout the images and text in the article preview */
     display: grid;
-    grid-template-columns: 20vw auto;
+    grid-template-columns: 30vw auto;
     grid-template-rows: repeat(auto, 4);
     grid-template-areas: 
     "image title"
@@ -23,21 +23,26 @@ div.article {
 
 div.article > div.image {
     grid-area: image;
+    align-self: center;
+    justify-self: center;
 }
 
 div.article > div.image > img {
-    max-width: 18vw;
-    max-height: 18vw;
+    max-width: 100%;
+    max-height: 22vw;
+    border-radius: 20px;
 }
 
 div.article > h2.title {
     grid-area: title;
     font-family: 'Poppins', sans-serif;
     color: var(--secondary-color);
+    margin-bottom: 0;
 }
 
 div.article > p.author {
     grid-area: author;
+    margin-top: 0;
 }
 
 div.article > p.description {
@@ -50,7 +55,7 @@ div.article > a.redirectButton {
     margin-right: 10px;
 }
 
-/* This will apply for smaller screens */
+/* This will apply to smaller screens */
 @media screen and (max-width: 800px) {
     /* The article icons will be clipped on smaller devices */
     div.article {

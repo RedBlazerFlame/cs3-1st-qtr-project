@@ -3,9 +3,7 @@ const ArticlePreview = (props) => {
         componentData: `
         <div class="article">
             <div class="image">
-                <img src="/images/testImage2.jpeg" ${typeof props.icon.alt === "string"
-            ? `alt=${props.icon.alt}`
-            : ""} ${typeof props.icon.title === "string"
+                <img src="${props.icon.url}" ${typeof props.icon.alt === "string" ? `alt=${props.icon.alt}` : ""} ${typeof props.icon.title === "string"
             ? `title=${props.icon.title}`
             : ""} />
             </div>

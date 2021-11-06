@@ -13,9 +13,19 @@ const articleId = urlParameters.get("id");
 const imageHeader = document.querySelector("section.imageHeader");
 const headerCaption = document.querySelector("section.headerCaption");
 const breadcrumbCurrentPage = document.getElementById("breadcrumbCurrentPage");
+const articleTitleElement = document.getElementById("articleTitle");
+const articleAuthorElement = document.getElementById("articleAuthor");
+const articlePublicationDateElement = document.getElementById("articlePublicationDate");
+const articleContentElement = document.querySelector("section.articleContent");
 (() => __awaiter(void 0, void 0, void 0, function* () {
-    const articlesJSON = yield fetch("/json/articles.json").then((res) => res.json());
+    const [articlesJSON, articleContent] = yield Promise.all([
+        fetch("/json/articles.json").then((res) => res.json()),
+        fetch(`/articles/${articleId}.html`).then((res) => res.text()),
+    ]);
     const articleData = articlesJSON.articles[articleId];
+    if (typeof articleData === "undefined") {
+        window.location.replace("/");
+    }
     imageHeader.innerHTML = ImageHeader({
         image: {
             src: articleData.banner.url,
@@ -26,4 +36,9 @@ const breadcrumbCurrentPage = document.getElementById("breadcrumbCurrentPage");
     }).componentData;
     headerCaption.innerHTML = articleData.headerCaption;
     breadcrumbCurrentPage.innerHTML = articleData.title;
+    articleTitleElement.innerText = articleData.title;
+    articleAuthorElement.innerText = articleData.author;
+    articlePublicationDateElement.innerText = articleData.datePublished;
+    articleContentElement.innerHTML = articleContent;
+    document.title = articleData.title;
 }))();

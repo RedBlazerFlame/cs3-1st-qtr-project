@@ -34,6 +34,21 @@ const Header: FC<HeaderProps> = (props: HeaderProps) => {
                     // Redirecting the user to the searchpage and displaying results
                     window.location.replace(`/articleList?q=${inputText}`);
                 });
+
+                // Attach an event listener to the searchbar icon so that mobile users can go to the searchpage too
+                let searchBarIcon: HTMLImageElement = document.getElementById(
+                    "searchBarIcon"
+                ) as HTMLImageElement;
+                searchBarIcon.addEventListener("click", (_) => {
+                    const inputText = searchBarInput.value;
+
+                    // Redirecting the user to the searchpage and displaying results
+                    window.location.replace(
+                        `/articleList${
+                            inputText !== "" ? `?q=${inputText}` : ""
+                        }`
+                    );
+                });
             },
         },
         state: props,

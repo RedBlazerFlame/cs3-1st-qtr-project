@@ -1,38 +1,21 @@
 {
     "articles": {
-        "how-food-waste-affects-climate-change": {
-            "title": "How Food Waste Affects Climate Change",
+        "how-food-waste-affects-the-climate": {
+            "title": "How Food Waste Affects The Climate",
             "author": "Gabee De Vera",
-            "datePublished": "September 27, 2021",
-            "description": "description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description ",
+            "datePublished": "October 6, 2021",
+            "description": "When you hear the phrase <i>climate change</i>, what do you think of? Greenhouse gases? Fossil fuels? Many people think of these as the primary causes of climate change, and they would be right! However, there is one cause of climate change that I think most people are not aware of, and that cause is <b>Food Waste</b>.",
             "icon": {
-                "alt": "Otogi",
-                "title": "Otogi",
-                "url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.hmv.co.jp%2Fimage%2Fjacket%2F400%2F93%2F3%2F6%2F936.jpg&f=1&nofb=1"
+                "alt": "Image of Food",
+                "title": "Source: Smith, S. (2020, July 27). Various food items on a gray table [Image]. https://i0.wp.com/thisissamsmith.com/wp-content/uploads/2020/07/variety-of-vegetables-1400172-1-e1595858595231.jpg?w=1925&ssl=1",
+                "url": "/images/articles/how-food-waste-affects-the-climate/icon.jpg"
             },
             "banner": {
-                "alt": "Bokuramadaunderground",
-                "title": "Bokuramadaunderground",
-                "url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FGrBrQA0DGyE%2Fmaxresdefault.jpg&f=1&nofb=1"
+                "alt": "Image of Food",
+                "title": "Source: Smith, S. (2020, July 27). Various food items on a gray table [Image]. https://i0.wp.com/thisissamsmith.com/wp-content/uploads/2020/07/variety-of-vegetables-1400172-1-e1595858595231.jpg?w=1925&ssl=1",
+                "url": "/images/articles/how-food-waste-affects-the-climate/banner.jpg"
             },
-            "headerCaption": "This is <b>THE BOY</b> from Bokuramadaundeground and Kiminisekai"
-        },
-        "how-food-waste-affects-climate-change-2": {
-            "title": "How Food Waste Affects Climate Change",
-            "author": "Gabee De Vera",
-            "datePublished": "September 27, 2021",
-            "description": "description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description ",
-            "icon": {
-                "alt": "Otogi",
-                "title": "Otogi",
-                "url": "https://img.hmv.co.jp/image/jacket/400/93/3/6/936.jpg"
-            },
-            "banner": {
-                "alt": "Bokuramadaunderground",
-                "title": "Bokuramadaunderground",
-                "url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FGrBrQA0DGyE%2Fmaxresdefault.jpg&f=1&nofb=1"
-            },
-            "headerCaption": "This is <b>THE BOY</b> from Bokuramadaundeground and Kiminisekai"
+            "headerCaption": "Smith, S. (2020, July 27). <i>Various food items on a gray table </i>[Image]. <a href=\"https://i0.wp.com/thisissamsmith.com/wp-content/uploads/2020/07/variety-of-vegetables-1400172-1-e1595858595231.jpg?w=1925&ssl=1\">https://i0.wp.com/thisissamsmith.com/wp-content/uploads/2020/07/variety-of-vegetables-1400172-1-e1595858595231.jpg?w=1925&ssl=1</a>"
         }
     }
 }

@@ -10,20 +10,36 @@ const imageHeader: HTMLElement = document.querySelector("section.imageHeader");
 const headerCaption: HTMLElement = document.querySelector(
     "section.headerCaption"
 );
-
 const breadcrumbCurrentPage: HTMLLIElement = document.getElementById(
     "breadcrumbCurrentPage"
 ) as HTMLLIElement;
+const articleTitleElement: HTMLElement =
+    document.getElementById("articleTitle");
+const articleAuthorElement: HTMLSpanElement =
+    document.getElementById("articleAuthor");
+const articlePublicationDateElement: HTMLParagraphElement =
+    document.getElementById("articlePublicationDate") as HTMLParagraphElement;
+const articleContentElement: HTMLElement = document.querySelector(
+    "section.articleContent"
+);
 
 // Wrapping code in an async function so that we can await asynchronous responses
 (async () => {
-    // This will retrieve all of the article metadata
-    const articlesJSON: ArticlesJSON = await fetch("/json/articles.json").then(
-        (res) => res.json()
-    );
+    // This will retrieve all of the article metadata and article content
+    const [articlesJSON, articleContent]: [ArticlesJSON, string] =
+        await Promise.all([
+            fetch("/json/articles.json").then((res) => res.json()),
+            fetch(`/articles/${articleId}.html`).then((res) => res.text()),
+        ]);
 
     // This will retrieve the article data for the page
-    const articleData: ArticleData = articlesJSON.articles[articleId];
+    const articleData: ArticleData | undefined =
+        articlesJSON.articles[articleId];
+
+    // If the article does not exist, redirect the user back to the home page
+    if (typeof articleData === "undefined") {
+        window.location.replace("/");
+    }
 
     // Updating Image Header
     imageHeader.innerHTML = ImageHeader({
@@ -40,4 +56,15 @@ const breadcrumbCurrentPage: HTMLLIElement = document.getElementById(
 
     // Updating Breadcrumb
     breadcrumbCurrentPage.innerHTML = articleData.title;
+
+    // Updating Article Header
+    articleTitleElement.innerText = articleData.title;
+    articleAuthorElement.innerText = articleData.author;
+    articlePublicationDateElement.innerText = articleData.datePublished;
+
+    // Inserting Article Content into the page
+    articleContentElement.innerHTML = articleContent;
+
+    // Updating Title
+    document.title = articleData.title;
 })();
