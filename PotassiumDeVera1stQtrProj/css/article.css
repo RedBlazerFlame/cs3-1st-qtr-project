@@ -1,0 +1,128 @@
+main.content {
+    /* Subdividing the content into subsections */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60vh 4vh 8vh 2vh auto 6vh auto;
+    grid-template-areas:
+    "header"
+    "headerCaption"
+    "breadcrumb"
+    "spacer1"
+    "articleHeader"
+    "spacer2"
+    "articleContent"
+    ;
+}
+
+main.content > section.headerCaption {
+    grid-area: headerCaption;
+    margin: 0 5vw;
+    font-size: 1.5rem;
+}
+
+main.content > section.breadcrumb {
+    grid-area: breadcrumb;
+    margin: 0 5vw;
+    font-size: 2rem;
+}
+
+/* This will remove the default bullets in the list */
+main.content > section.breadcrumb > ul.breadcrumb {
+    padding: 0;
+    list-style-type: none;
+}
+
+/* This will ensure that each list entry in the breadcrumb is beside one another */
+main.content > section.breadcrumb > ul.breadcrumb > li {
+    display: inline;
+}
+
+/* This will put a space between each entry in the list by placing a slash ("/") before all list items except the first one */
+main.content > section.breadcrumb > ul.breadcrumb > li:not(:first-child)::before {
+    content: " / ";
+}
+
+main.content > section.articleHeader {
+    grid-area: articleHeader;
+    margin: 0 5vw;
+}
+
+main.content > section.articleHeader > h1#articleTitle {
+    margin-bottom: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 4rem;
+}
+
+main.content > section.articleHeader > p {
+    margin: 0;
+    font-size: 2rem;
+}
+
+main.content > section.articleContent {
+    grid-area: articleContent;
+    margin: 0 5vw;
+    font-size: 2rem;
+
+    /* This will make layouting easier */
+    display: flex;
+    flex-direction: column;
+}
+
+main.content > section.articleContent > * {
+    max-width: 100%;
+    margin: 0;
+}
+
+main.content > section.articleContent .header {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0px;
+}
+
+main.content > section.articleContent h1.header {
+    margin-top: 20vh;
+}
+
+main.content > section.articleContent h2.header {
+    margin-top: 10vh;
+}
+
+main.content > section.articleContent h3.header {
+    margin-top: 5vh;
+}
+
+main.content > section.articleContent h4.header {
+    margin-top: 2.5vh;
+}
+
+main.content > section.articleContent h5.header {
+    margin-top: 1.25vh;
+}
+
+main.content > section.articleContent h6.header {
+    margin-top: 0.625vh;
+}
+
+main.content > section.articleContent .centered {
+    align-self: center;
+}
+
+main.content > section.articleContent p.caption {
+    color: rgba(0,0,0,0.5);
+    font-style: italic;
+}
+
+/* This will remove the bullets before the reference list */
+main.content > section.articleContent ul.referenceList {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* This will indent all reference list entries */
+main.content > section.articleContent ul.referenceList > li {
+    text-indent: 40px;
+}
+
+/* This will put a space in between each reference list entry */
+main.content > section.articleContent ul.referenceList > li:not(:first-child) {
+    margin-top: 10px;
+}

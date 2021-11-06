@@ -1,0 +1,21 @@
+{
+    "articles": {
+        "how-food-waste-affects-the-climate": {
+            "title": "How Food Waste Affects The Climate",
+            "author": "Gabee De Vera",
+            "datePublished": "October 6, 2021",
+            "description": "When you hear the phrase <i>climate change</i>, what do you think of? Greenhouse gases? Fossil fuels? Many people think of these as the primary causes of climate change, and they would be right! However, there is one cause of climate change that I think most people are not aware of, and that cause is <b>food waste</b>.",
+            "icon": {
+                "alt": "Image of Food",
+                "title": "Source: Smith, S. (2020, July 27). Various food items on a gray table [Image]. https://i0.wp.com/thisissamsmith.com/wp-content/uploads/2020/07/variety-of-vegetables-1400172-1-e1595858595231.jpg?w=1925&ssl=1",
+                "url": "/images/articles/how-food-waste-affects-the-climate/icon.jpg"
+            },
+            "banner": {
+                "alt": "Image of Food",
+                "title": "Source: Smith, S. (2020, July 27). Various food items on a gray table [Image]. https://i0.wp.com/thisissamsmith.com/wp-content/uploads/2020/07/variety-of-vegetables-1400172-1-e1595858595231.jpg?w=1925&ssl=1",
+                "url": "/images/articles/how-food-waste-affects-the-climate/banner.jpg"
+            },
+            "headerCaption": "Smith, S. (2020, July 27). <i>Various food items on a gray table </i>[Image]. <a href=\"https://i0.wp.com/thisissamsmith.com/wp-content/uploads/2020/07/variety-of-vegetables-1400172-1-e1595858595231.jpg?w=1925&ssl=1\">https://i0.wp.com/thisissamsmith.com/wp-content/uploads/2020/07/variety-of-vegetables-1400172-1-e1595858595231.jpg?w=1925&ssl=1</a>"
+        }
+    }
+}

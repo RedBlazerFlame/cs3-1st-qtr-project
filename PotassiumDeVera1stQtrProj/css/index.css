@@ -1,0 +1,39 @@
+main.content {
+    /* Subdividing the content into subsections */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60vh 4vh auto;
+    grid-template-areas:
+    "header"
+    "headerCaption"
+    "latestArticles"
+    ;
+}
+
+main.content > section.headerCaption {
+    grid-area: headerCaption;
+    margin: 0 2vw;
+    font-size: 1.25rem;
+}
+
+main.content > section.latestArticles {
+    grid-area: latestArticles;
+    margin: 0 2vw;
+}
+
+main.content > section.latestArticles > h1 {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: clamp(3rem, 2.5rem, 12px);
+}
+
+main.content > section.latestArticles > div#articlesList {
+    /* This will ensure that the articles will be laid out vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* This will apply for smaller screens */
+@media screen and (max-width: 800px) {
+    
+}

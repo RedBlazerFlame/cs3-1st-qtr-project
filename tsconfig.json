@@ -1,0 +1,16 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "forceConsistentCasingInFileNames": true,
+        "removeComments": true,
+        "skipDefaultLibCheck": true,
+        "watch": true,
+        "strict": false,
+        "target": "ES6",
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "esModuleInterop": false,
+        "allowSyntheticDefaultImports": true,
+        "lib": ["ESNext", "DOM"]
+    }
+}

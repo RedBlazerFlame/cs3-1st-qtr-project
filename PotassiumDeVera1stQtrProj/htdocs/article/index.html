@@ -1,0 +1,60 @@
+<!-- Note: This article page uses JavaScript to render the articles. It takes the id url parameter and then uses that to get the article data -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Gabee De Vera" />
+        <meta name="description" content="This is an article page" />
+        <meta name="keywords" content="articlepage, article, climate, post" />
+        <meta name="date" content="6/11/2021" />
+        <meta name="revised" content="6/11/2021" />
+        <script
+            src="/scripts/component-generation/generator.js"
+            type="module"
+            defer
+        ></script>
+        <script src="/scripts/global.js" type="module" defer></script>
+        <script src="/scripts/article.js" type="module" defer></script>
+        <link rel="icon" href="/images/logo1.png" type="image/png" />
+        <link rel="stylesheet" href="/css/global.css" type="text/css" />
+        <link rel="stylesheet" href="/css/article.css" type="text/css" />
+        <link rel="stylesheet" href="/css/Header.module.css" type="text/css" />
+        <link rel="stylesheet" href="/css/Footer.module.css" type="text/css" />
+        <link
+            rel="stylesheet"
+            href="/css/ImageHeader.module.css"
+            type="text/css"
+        />
+        <title>Article</title>
+    </head>
+    <body>
+        <!-- This HTML code will tell JavaScript to insert the header component into this div -->
+        <div data-component data-component-name="Header" data-props="{}"></div>
+
+        <main class="content">
+            <section class="imageHeader"></section>
+            <section class="headerCaption"></section>
+            <section class="breadcrumb">
+                <ul class="breadcrumb">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/articleList">Article List</a></li>
+                    <li id="breadcrumbCurrentPage"></li>
+                </ul>
+            </section>
+            <section class="articleHeader">
+                <h1 id="articleTitle">Title</h1>
+                <p>
+                    By <span id="articleAuthor">The Climate Post Editors</span>
+                </p>
+                <p id="articlePublicationDate">Unknown Publication Date</p>
+            </section>
+            <section class="articleContent"></section>
+        </main>
+
+        <!-- This HTML code will tell JavaScript to insert the footer component into this div -->
+        <div data-component data-component-name="Footer" data-props="{}"></div>
+    </body>
+</html>

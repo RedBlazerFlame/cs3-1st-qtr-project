@@ -1,0 +1,90 @@
+div.article {
+    /* This will properly layout the images and text in the article preview */
+    display: grid;
+    grid-template-columns: 30vw auto;
+    grid-template-rows: repeat(auto, 4);
+    grid-template-areas: 
+    "image title"
+    "image author"
+    "image description"
+    "image redirectButton"
+    ;
+
+    padding: 1vw;
+    margin: 16px 0;
+    background-color: var(--primary-color);
+
+    /*This will apply a border around the article*/
+    border-radius: 20px;
+
+    /*This will apply a soft shadow*/
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.03), 0px 4px 4px rgba(0,0,0,0.06), 0px 8px 8px rgba(0,0,0,0.09), 0px 16px 16px rgba(0,0,0,0.12), 0px 32px 32px rgba(0,0,0,0.15);
+}
+
+div.article > div.image {
+    grid-area: image;
+    align-self: center;
+    justify-self: center;
+}
+
+div.article > div.image > img {
+    max-width: 100%;
+    max-height: 22vw;
+    border-radius: 20px;
+}
+
+div.article > h2.title {
+    grid-area: title;
+    font-family: 'Poppins', sans-serif;
+    color: var(--secondary-color);
+    margin-bottom: 0;
+}
+
+div.article > p.author {
+    grid-area: author;
+    margin-top: 0;
+}
+
+div.article > p.description {
+    grid-area: description;
+}
+
+div.article > a.redirectButton {
+    grid-area: button;
+    color: black;
+    margin-right: 10px;
+}
+
+/* This will apply to smaller screens */
+@media screen and (max-width: 800px) {
+    /* The article icons will be clipped on smaller devices */
+    div.article {
+        /* This will properly layout the images and text in the article preview */
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(auto, 4);
+        grid-template-areas: 
+        "title"
+        "author"
+        "description"
+        "redirectButton"
+        ;
+
+        padding: 1vw;
+        margin: 5px 0;
+        background-color: var(--primary-color);
+
+        /*This will apply a border around the article*/
+        border-radius: 20px;
+
+        /* Making the text bigger on smaller screens */
+        font-size: 14px;
+
+        /*This will apply a soft shadow*/
+        box-shadow: 0px 2px 2px rgba(0,0,0,0.03), 0px 4px 4px rgba(0,0,0,0.06), 0px 8px 8px rgba(0,0,0,0.09), 0px 16px 16px rgba(0,0,0,0.12), 0px 32px 32px rgba(0,0,0,0.15);
+    }
+
+    div.article > div.image {
+        display: none;
+    }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Gabee De Vera" />
+        <meta
+            name="description"
+            content="Welcome to the homepage of the Climate Post. We aim to give you accurate information about earth's climate"
+        />
+        <meta name="keywords" content="homepage, climate, post" />
+        <meta name="date" content="31/10/2021" />
+        <meta name="revised" content="6/11/2021" />
+        <script
+            src="/scripts/component-generation/generator.js"
+            type="module"
+            defer
+        ></script>
+        <script src="/scripts/global.js" type="module" defer></script>
+        <script src="/scripts/index.js" type="module" defer></script>
+        <link rel="icon" href="/images/logo1.png" type="image/png" />
+        <link rel="stylesheet" href="/css/global.css" type="text/css" />
+        <link rel="stylesheet" href="/css/index.css" type="text/css" />
+        <link rel="stylesheet" href="/css/Header.module.css" type="text/css" />
+        <link rel="stylesheet" href="/css/Footer.module.css" type="text/css" />
+        <link
+            rel="stylesheet"
+            href="/css/ImageHeader.module.css"
+            type="text/css"
+        />
+        <link
+            rel="stylesheet"
+            href="/css/ArticlePreview.module.css"
+            type="text/css"
+        />
+        <title>The Climate Post</title>
+    </head>
+    <body>
+        <!-- This HTML code will tell JavaScript to insert the header component into this div -->
+        <div data-component data-component-name="Header" data-props="{}"></div>
+
+        <main class="content">
+            <section
+                data-component=""
+                data-component-name="ImageHeader"
+                data-props='{"image": {
+                "src": "/images/homePageHeader3.png",
+                "alt": "This is an image of a forest",
+                "title": "Source: DaveyBaker. (2013, October 15). Green forest 1 of 3[Image]. DeviantArt. https://www.deviantart.com/daveybaker/art/Green-forest-1-of-3-407309171"
+                },
+                "showTitle": true
+                }'
+            ></section>
+            <section class="headerCaption">
+                <p class="headerImageCitation">
+                    Image Source: DaveyBaker. (2013, October 15).
+                    <i>Green forest 1 of 3</i>[Image]. DeviantArt.
+                    <a
+                        href="https://www.deviantart.com/daveybaker/art/Green-forest-1-of-3-407309171"
+                        >https://www.deviantart.com/daveybaker/art/Green-forest-1-of-3-407309171</a
+                    >
+                </p>
+            </section>
+
+            <section class="latestArticles">
+                <h1>Latest Articles</h1>
+                <div id="articlesList">
+                    <!-- JavaScript will fill this part of the HTML Document with article previews. The code that does this is in scripts/index.ts -->
+                </div>
+            </section>
+        </main>
+
+        <!-- This HTML code will tell JavaScript to insert the footer component into this div -->
+        <div data-component data-component-name="Footer" data-props="{}"></div>
+    </body>
+</html>

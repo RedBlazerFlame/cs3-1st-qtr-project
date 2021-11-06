@@ -1,0 +1,58 @@
+/* As the name of the file suggests, global.css applies to all pages in the website */
+
+/* Importing fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap');
+
+/* This will ensure that the dimensions of all elements is based on the sum of the dimensions of the content, padding, and border */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    /* This is the font-size that rem is relative to */
+    font-size: clamp(6px, 1vw, 12px);
+
+    /* Declaring CSS Variables for the color scheme */
+    --primary-color: #FBFEE6;
+    --secondary-color: #68B16A;
+    --tertiary-color: #093E23;
+}
+
+body {
+    /* display:grid; allows for complex layouts using the CSS grid system */
+    display: -ms-grid;
+    display: grid;
+
+    /* Subdividing the page into a header, content, and footer section */
+    grid-template-rows: 10vh auto auto;
+    grid-template-columns: auto;
+    grid-template-areas: 
+    "header"
+    "content"
+    "footer"
+    ;
+
+    /* Setting a global font family */
+    font-family: 'Open Sans', sans-serif;
+
+    /* Removing margins in the body*/
+    margin: 0;
+}
+
+main.content {
+    grid-area: content;
+    font-size: 1.5rem;
+}
+
+/* Classes for Colors */
+.primaryColor {
+    color: var(--primary-color);
+}
+
+.secondaryColor {
+    color: var(--secondary-color);
+}
+
+.tertiaryColor {
+    color: var(--tertiary-color);
+}
