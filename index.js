@@ -27,6 +27,10 @@ app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 }));
 app.use(express.static(`./${ROOT_FOLDER_DIR_NAME}/htdocs`));
 app.use(express.static(`./${ROOT_FOLDER_DIR_NAME}`));
+app.get(/(.*)/, (req, res) => {
+    console.log(`Error: cannot GET ${req.url}`);
+    res.status(404).redirect("/error/?code=404");
+});
 httpServer.listen(PORT, () => {
     console.log(`http://localhost:${PORT}/`);
 });

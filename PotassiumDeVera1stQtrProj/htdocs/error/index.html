@@ -13,10 +13,10 @@
         <meta name="author" content="Gabee De Vera" />
         <meta
             name="description"
-            content="Welcome to the homepage of the Climate Post. We aim to give you accurate information about earth's climate"
+            content="This is the error page of the Climate Post"
         />
-        <meta name="keywords" content="homepage, climate, post" />
-        <meta name="date" content="31/10/2021" />
+        <meta name="keywords" content="error, climate, post" />
+        <meta name="date" content="6/11/2021" />
         <meta name="revised" content="10/12/2021" />
         <script
             src="/scripts/component-generation/generator.js"
@@ -24,20 +24,15 @@
             defer
         ></script>
         <script src="/scripts/global.js" type="module" defer></script>
-        <script src="/scripts/index.js" type="module" defer></script>
+        <script src="/scripts/error.js" type="module" defer></script>
         <link rel="icon" href="/images/logo1.png" type="image/png" />
         <link rel="stylesheet" href="/css/global.css" type="text/css" />
-        <link rel="stylesheet" href="/css/index.css" type="text/css" />
+        <link rel="stylesheet" href="/css/error.css" type="text/css" />
         <link rel="stylesheet" href="/css/Header.module.css" type="text/css" />
         <link rel="stylesheet" href="/css/Footer.module.css" type="text/css" />
         <link
             rel="stylesheet"
             href="/css/ImageHeader.module.css"
-            type="text/css"
-        />
-        <link
-            rel="stylesheet"
-            href="/css/ArticlePreview.module.css"
             type="text/css"
         />
         <title>The Climate Post</title>
@@ -72,11 +67,17 @@
                 </p>
             </section>
 
-            <section class="latestArticles">
-                <h1>Latest Articles</h1>
-                <div id="articlesList">
-                    <!-- JavaScript will fill this part of the HTML Document with article previews. The code that does this is in scripts/index.ts -->
-                </div>
+            <!-- This is the error description. JavaScript will render new HTML here (the code that does this can be found in scripts/error.ts) -->
+            <section class="errorInfo">
+                <h1>Error</h1>
+                <p class="errorCode">
+                    Error Code: <span id="codeNumber">404</span> -
+                    <span id="errorDescription">Not Found</span>
+                </p>
+                <p id="fullErrorDescription">
+                    It seems like the page that you are trying to access does
+                    not exist.
+                </p>
             </section>
         </main>
 

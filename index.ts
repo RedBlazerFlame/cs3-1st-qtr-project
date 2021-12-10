@@ -28,6 +28,13 @@ app.use(express.static(`./${ROOT_FOLDER_DIR_NAME}/htdocs`));
 
 app.use(express.static(`./${ROOT_FOLDER_DIR_NAME}`));
 
+// TODO Error Handling
+app.get(/(.*)/, (req, res) => {
+    console.log(`Error: cannot GET ${req.url}`);
+
+    res.status(404).redirect("/error/?code=404");
+});
+
 // Listening to the Specified Port
 httpServer.listen(PORT, () => {
     console.log(`http://localhost:${PORT}/`);

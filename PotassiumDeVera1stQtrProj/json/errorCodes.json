@@ -1,0 +1,10 @@
+{
+    "404": {
+        "description": "Not Found",
+        "longDescription": "It looks like the page does not exist. Check the link that you have entered. It is also possible that the page you are looking for is still under development."
+    },
+    "418": {
+        "description": "I'm a teapot",
+        "longDescription": "The server failed to brew coffee with a teapot. Try asking the server to brew tea instead."
+    }
+}

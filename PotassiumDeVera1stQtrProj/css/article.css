@@ -68,7 +68,20 @@ main.content > section.articleContent {
     flex-direction: column;
 }
 
-main.content > section.articleContent > * {
+main.content > section.articleContent section,
+main.content > section.articleContent header,
+main.content > section.articleContent footer,
+main.content > section.articleContent main {
+    /* I am using display: flex; here so that elements with the "centered" class will be properly centered */
+    display: flex;
+    flex-direction: column;
+}
+
+main.content > section.articleContent > *,
+main.content > section.articleContent section > *,
+main.content > section.articleContent header > *,
+main.content > section.articleContent footer > *,
+main.content > section.articleContent main > * {
     max-width: 100%;
     margin: 0;
 }

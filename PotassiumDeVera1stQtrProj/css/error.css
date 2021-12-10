@@ -6,7 +6,7 @@ main.content {
     grid-template-areas:
     "header"
     "headerCaption"
-    "latestArticles"
+    "errorInfo"
     ;
 }
 
@@ -31,4 +31,14 @@ main.content > section.latestArticles > div#articlesList {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+main.content > section.errorInfo {
+    grid-area: errorInfo;
+    margin: 0 2vw;
+}
+
+main.content > section.errorInfo > p.errorCode > span#codeNumber,
+main.content > section.errorInfo > p.errorCode > span#errorDescription {
+    font-weight: bold;
 }
