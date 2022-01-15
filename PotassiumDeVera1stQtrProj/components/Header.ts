@@ -49,6 +49,21 @@ const Header: FC<HeaderProps> = (props: HeaderProps) => {
                         }`
                     );
                 });
+
+                // If there is a "q" URL parameter, set the value of the input box (in the search bar) to the value of that URL parameter
+                const urlParameters = new window.URLSearchParams(
+                    window.location.search
+                );
+                const queryString = urlParameters.get("q");
+
+                /// Getting a reference to HTML Elements
+                const searchBarElement: HTMLInputElement =
+                    document.getElementById(
+                        "headerSearchbarInput"
+                    ) as HTMLInputElement;
+
+                /// Changing the text in the searchbar element
+                searchBarElement.value = queryString;
             },
         },
         state: props,

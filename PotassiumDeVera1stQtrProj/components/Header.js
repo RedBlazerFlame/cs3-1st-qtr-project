@@ -24,6 +24,10 @@ const Header = (props) => {
                     const inputText = searchBarInput.value;
                     window.location.replace(`/articleList${inputText !== "" ? `?q=${inputText}` : ""}`);
                 });
+                const urlParameters = new window.URLSearchParams(window.location.search);
+                const queryString = urlParameters.get("q");
+                const searchBarElement = document.getElementById("headerSearchbarInput");
+                searchBarElement.value = queryString;
             },
         },
         state: props,

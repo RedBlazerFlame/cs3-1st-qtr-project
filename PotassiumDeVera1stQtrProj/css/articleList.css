@@ -1,0 +1,38 @@
+main.content {
+    /* Subdividing the content into subsections */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "results"
+    ;
+}
+
+main.content > section.searchbar {
+    display: none;
+}
+
+main.content > section.results {
+    grid-area: results;
+    margin: 0 2vw;
+}
+
+/* This will apply to smaller screens */
+@media screen and (max-width: 800px) {
+    /* Show the searchbar on smaller screens */
+    main.content {
+        /* Subdividing the content into subsections */
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10vh auto;
+        grid-template-areas:
+        "searchbar"
+        "results"
+        ;
+    }
+
+    main.content > section.searchbar {
+        display: initial;
+        grid-area: searchbar;
+    }
+}

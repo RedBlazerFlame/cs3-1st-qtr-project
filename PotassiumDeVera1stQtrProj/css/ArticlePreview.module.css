@@ -1,13 +1,14 @@
 div.article {
     /* This will properly layout the images and text in the article preview */
     display: grid;
-    grid-template-columns: 30vw auto;
+    width: 100%;
+    grid-template-columns: clamp(0px, 30vw, 200px) 20px auto;
     grid-template-rows: repeat(auto, 4);
     grid-template-areas: 
-    "image title"
-    "image author"
-    "image description"
-    "image redirectButton"
+    "image spacer title"
+    "image spacer author"
+    "image spacer description"
+    "image spacer redirectButton"
     ;
 
     padding: 1vw;
