@@ -10,23 +10,38 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import ArticlePreview from "../components/ArticlePreview.js";
 const urlParameters = new window.URLSearchParams(window.location.search);
 const queryString = urlParameters.get("q");
+const DEBOUNCE_TIME = 400;
 const resultsElement = document.querySelector("section.results");
+const searchbarInput = document.getElementById("searchbarInput");
 (() => __awaiter(void 0, void 0, void 0, function* () {
     const articlesJSON = yield fetch("/json/articles.json").then((res) => res.json());
-    let matchingArticles = [];
-    if (queryString === "") {
-        matchingArticles = Object.entries(articlesJSON.articles);
+    function queryArticles(queryString) {
+        let matchingArticles = [];
+        if (queryString === "") {
+            matchingArticles = Object.entries(articlesJSON.articles);
+        }
+        else {
+            matchingArticles = Object.entries(articlesJSON.articles).filter(([key, articleData]) => [
+                articleData.author,
+                articleData.description,
+                articleData.title,
+                articleData.tags,
+            ].some((field) => field.toLowerCase().includes(queryString.toLowerCase())));
+        }
+        return matchingArticles;
     }
-    else {
-        matchingArticles = Object.entries(articlesJSON.articles).filter(([key, articleData]) => [
-            articleData.author,
-            articleData.description,
-            articleData.title,
-            articleData.tags,
-        ].some((field) => field.toLowerCase().includes(queryString.toLowerCase())));
+    function showArticles(matchingArticles) {
+        const matchingArticlesHTML = matchingArticles
+            .map((article) => ArticlePreview(Object.assign(Object.assign({}, article[1]), { url: `/article/?id=${article[0]}`, animate: false })).componentData)
+            .reduce((acc, cur) => `${acc}${cur}`, "");
+        resultsElement.innerHTML = matchingArticlesHTML;
     }
-    const matchingArticlesHTML = matchingArticles
-        .map((article) => ArticlePreview(Object.assign(Object.assign({}, article[1]), { url: `/article/?id=${article[0]}`, animate: true })).componentData)
-        .reduce((acc, cur) => `${acc}${cur}`, "");
-    resultsElement.innerHTML = matchingArticlesHTML;
+    showArticles(queryArticles(queryString));
+    let lastQuery = searchbarInput.value;
+    setInterval(() => {
+        if (searchbarInput.value !== lastQuery) {
+            showArticles(queryArticles(searchbarInput.value));
+            lastQuery = searchbarInput.value;
+        }
+    }, DEBOUNCE_TIME);
 }))();
