@@ -1,7 +1,7 @@
 const Header = (props) => {
     return {
         componentData: `
-        <a class="headerLeft" href="/about">
+        <a class="headerLeft" href="/">
             <img class="headerIcon" src="/images/logo1.png" alt="Site Icon" title="Made by Gabee De Vera">
             <p class="title">
                 The Climate Post
@@ -24,6 +24,10 @@ const Header = (props) => {
                     const inputText = searchBarInput.value;
                     window.location.replace(`/articleList${inputText !== "" ? `?q=${inputText}` : ""}`);
                 });
+                const urlParameters = new window.URLSearchParams(window.location.search);
+                const queryString = urlParameters.get("q");
+                const searchBarElement = document.getElementById("headerSearchbarInput");
+                searchBarElement.value = queryString;
             },
         },
         state: props,

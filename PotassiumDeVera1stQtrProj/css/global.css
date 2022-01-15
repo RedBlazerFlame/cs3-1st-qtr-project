@@ -24,7 +24,7 @@ body {
     display: grid;
 
     /* Subdividing the page into a header, content, and footer section */
-    grid-template-rows: 10vh auto auto;
+    grid-template-rows: 10vh auto 40vh;
     grid-template-columns: auto;
     grid-template-areas: 
     "header"
@@ -37,6 +37,11 @@ body {
 
     /* Removing margins in the body*/
     margin: 0;
+
+    /* Hiding Overflowing Content */
+    overflow-x: hidden;
+    max-width: 100vw;
+    min-height: 100vh;
 }
 
 main.content {

@@ -5,7 +5,7 @@ interface HeaderProps {}
 const Header: FC<HeaderProps> = (props: HeaderProps) => {
     return {
         componentData: `
-        <a class="headerLeft" href="/about">
+        <a class="headerLeft" href="/">
             <img class="headerIcon" src="/images/logo1.png" alt="Site Icon" title="Made by Gabee De Vera">
             <p class="title">
                 The Climate Post
@@ -49,6 +49,21 @@ const Header: FC<HeaderProps> = (props: HeaderProps) => {
                         }`
                     );
                 });
+
+                // If there is a "q" URL parameter, set the value of the input box (in the search bar) to the value of that URL parameter
+                const urlParameters = new window.URLSearchParams(
+                    window.location.search
+                );
+                const queryString = urlParameters.get("q");
+
+                /// Getting a reference to HTML Elements
+                const searchBarElement: HTMLInputElement =
+                    document.getElementById(
+                        "headerSearchbarInput"
+                    ) as HTMLInputElement;
+
+                /// Changing the text in the searchbar element
+                searchBarElement.value = queryString;
             },
         },
         state: props,

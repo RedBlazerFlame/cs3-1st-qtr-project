@@ -19,6 +19,7 @@ const articlesList = document.getElementById("articlesList");
         description: articleData[1].description,
         author: articleData[1].author,
         url: `/article/?id=${articleData[0]}`,
+        animate: true,
     }));
     articleHTMLPreviews.forEach((preview) => {
         articlesList.appendChild(domParser

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Gabee De Vera" />
+        <meta
+            name="description"
+            content="Looking for an article? Find it here!"
+        />
+        <meta name="keywords" content="article, list, climate, post" />
+        <meta name="date" content="15/01/2022" />
+        <meta name="revised" content="15/01/2022" />
+        <script
+            src="/scripts/component-generation/generator.js"
+            type="module"
+            defer
+        ></script>
+        <script src="/scripts/global.js" type="module" defer></script>
+        <script src="/scripts/articleList.js" type="module" defer></script>
+        <link rel="icon" href="/images/logo1.png" type="image/png" />
+        <link rel="stylesheet" href="/css/global.css" type="text/css" />
+        <link rel="stylesheet" href="/css/articleList.css" type="text/css" />
+        <link rel="stylesheet" href="/css/Header.module.css" type="text/css" />
+        <link rel="stylesheet" href="/css/Footer.module.css" type="text/css" />
+        <link
+            rel="stylesheet"
+            href="/css/ArticlePreview.module.css"
+            type="text/css"
+        />
+        <title>The Climate Post</title>
+    </head>
+    <body>
+        <!-- This HTML code will tell JavaScript to insert the header component into this div -->
+        <div data-component data-component-name="Header" data-props="{}"></div>
+
+        <main class="content">
+            <section class="searchbar">
+                <input
+                    id="searchbarInput"
+                    placeholder="What article are you looking for?"
+                />
+                <img
+                    id="searchBarIcon"
+                    src="/images/magnifyingGlass1.svg"
+                    alt="Search Bar Icon"
+                    title="Made by Gabee De Vera"
+                />
+            </section>
+            <section class="results"></section>
+        </main>
+
+        <!-- This HTML code will tell JavaScript to insert the footer component into this div -->
+        <div data-component data-component-name="Footer" data-props="{}"></div>
+    </body>
+</html>

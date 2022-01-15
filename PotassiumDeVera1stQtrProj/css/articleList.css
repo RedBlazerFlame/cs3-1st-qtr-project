@@ -1,0 +1,54 @@
+/* Removing unnecessary searchbar */
+.header[data-component] > .searchbar {
+    display: none !important;
+}
+
+main.content {
+    /* Subdividing the content into subsections */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20vh auto;
+    grid-template-areas:
+    "searchbar"
+    "results"
+    ;
+}
+
+main.content > section.searchbar {
+    grid-area: searchbar;
+}
+
+section.searchbar {
+    background-color: white;
+
+    /*This will ensure that the children of the left side of the header are laid out horizontally*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+
+    /* This will resize the searchbar */
+    margin: 2vw;
+    padding: 2vh;
+
+    /* This will apply a rounded border on the searchbar */
+    border: 0.2vh solid black;
+    border-radius: 4vh;
+}
+
+section.searchbar > #searchbarInput {
+    /* Resizing the searchbar input */
+    width: 100%;
+
+
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+}
+
+main.content > section.results {
+    grid-area: results;
+    margin: 0 2vw;
+}

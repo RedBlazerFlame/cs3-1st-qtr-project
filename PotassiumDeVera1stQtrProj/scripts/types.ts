@@ -1,6 +1,7 @@
 // This represents metadata about an article
 export interface ArticleData {
     title: string;
+    tags: string;
     author: string;
     datePublished: string;
     description: string;
