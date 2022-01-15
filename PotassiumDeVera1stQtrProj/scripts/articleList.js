@@ -26,7 +26,7 @@ const resultsElement = document.querySelector("section.results");
         ].some((field) => field.toLowerCase().includes(queryString.toLowerCase())));
     }
     const matchingArticlesHTML = matchingArticles
-        .map((article) => ArticlePreview(Object.assign(Object.assign({}, article[1]), { url: `/article/?id=${article[0]}` })).componentData)
+        .map((article) => ArticlePreview(Object.assign(Object.assign({}, article[1]), { url: `/article/?id=${article[0]}`, animate: true })).componentData)
         .reduce((acc, cur) => `${acc}${cur}`, "");
     resultsElement.innerHTML = matchingArticlesHTML;
 }))();

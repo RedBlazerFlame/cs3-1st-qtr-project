@@ -37,6 +37,10 @@ body {
 
     /* Removing margins in the body*/
     margin: 0;
+
+    /* Hiding Overflowing Content */
+    overflow-x: hidden;
+    width: 100vw;
 }
 
 main.content {

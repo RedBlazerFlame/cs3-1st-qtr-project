@@ -40,6 +40,7 @@ const resultsElement: HTMLElement = document.querySelector("section.results");
                 ArticlePreview({
                     ...article[1],
                     url: `/article/?id=${article[0]}`,
+                    animate: true,
                 }).componentData
         )
         .reduce((acc, cur) => `${acc}${cur}`, "");

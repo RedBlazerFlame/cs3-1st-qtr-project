@@ -10,6 +10,7 @@ interface ArticlePreviewProps {
     author: string;
     description: string;
     url: string;
+    animate: boolean;
 }
 
 const ArticlePreview: FC<ArticlePreviewProps> = (
@@ -17,7 +18,7 @@ const ArticlePreview: FC<ArticlePreviewProps> = (
 ) => {
     return {
         componentData: `
-        <div class="article">
+        <div class="article${props.animate ? " animated" : ""}">
             <div class="image">
                 <img src="${props.icon.url}" ${
             typeof props.icon.alt === "string" ? `alt=${props.icon.alt}` : ""
