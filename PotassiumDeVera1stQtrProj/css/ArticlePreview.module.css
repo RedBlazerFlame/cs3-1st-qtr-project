@@ -52,6 +52,7 @@ div.article > p.description {
 
 div.article > a.redirectButton {
     grid-area: button;
+    justify-self: right;
     color: black;
     margin-right: 10px;
 }

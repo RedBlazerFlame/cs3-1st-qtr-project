@@ -33,7 +33,7 @@ const resultsElement: HTMLElement = document.querySelector("section.results");
         );
     }
 
-    /// TODO Showing Results
+    /// Showing Results
     const matchingArticlesHTML = matchingArticles
         .map(
             (article) =>
