@@ -1,7 +1,7 @@
 const Header = (props) => {
     return {
         componentData: `
-        <a class="headerLeft" href="/about">
+        <a class="headerLeft" href="/">
             <img class="headerIcon" src="/images/logo1.png" alt="Site Icon" title="Made by Gabee De Vera">
             <p class="title">
                 The Climate Post
