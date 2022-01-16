@@ -62,3 +62,25 @@ main.content {
 .tertiaryColor {
     color: var(--tertiary-color);
 }
+
+/* Styling all links */
+a {
+    transition: color 0.5s;
+}
+
+a:link {
+    color: #000000;
+}
+
+a:visited {
+    color: var(--quaternary-color, #49393B);
+}
+
+a:hover {
+    color: var(--secondary-color, #68B16A);
+}
+
+a:active {
+    transition: color 0s;
+    color: var(--quaternary-color, #49393B);
+}

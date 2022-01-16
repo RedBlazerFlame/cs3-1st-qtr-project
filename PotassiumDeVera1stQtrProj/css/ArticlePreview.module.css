@@ -104,6 +104,7 @@ div.article > a.redirectButton:hover {
 }
 
 div.article > a.redirectButton:active {
+    transition: color 0s;
     color: var(--quaternary-color, #49393B);
 }
 
