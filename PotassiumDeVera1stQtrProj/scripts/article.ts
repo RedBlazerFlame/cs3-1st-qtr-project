@@ -26,20 +26,25 @@ const articleContentElement: HTMLElement = document.querySelector(
 // Wrapping code in an async function so that we can await asynchronous responses
 (async () => {
     // This will retrieve all of the article metadata and article content
-    const [articlesJSON, articleContent]: [ArticlesJSON, string] =
+    const [articlesJSON, articleContent]: [ArticlesJSON, string | null] =
         await Promise.all([
             fetch("/json/articles.json").then((res) => res.json()),
-            fetch(`/articles/${articleId}.html`).then((res) => res.text()),
+            fetch(`/articles/${articleId}.html`)
+                .then((res) => {
+                    // If an error occurred, redirect to the error page
+                    if (res.status >= 400) {
+                        window.location.assign("/error/?code=404");
+                        console.log("An error occurred");
+                    }
+
+                    return res;
+                })
+                .then((res) => res.text()),
         ]);
 
     // This will retrieve the article data for the page
     const articleData: ArticleData | undefined =
         articlesJSON.articles[articleId];
-
-    // If the article does not exist, redirect the user back to the home page
-    if (typeof articleData === "undefined") {
-        window.location.replace("/");
-    }
 
     // Updating Image Header
     imageHeader.innerHTML = ImageHeader({
@@ -63,7 +68,7 @@ const articleContentElement: HTMLElement = document.querySelector(
     articlePublicationDateElement.innerText = articleData.datePublished;
 
     // Inserting Article Content into the page
-    articleContentElement.innerHTML = articleContent;
+    articleContentElement.innerHTML = articleContent ?? "";
 
     // Updating Title
     document.title = articleData.title;

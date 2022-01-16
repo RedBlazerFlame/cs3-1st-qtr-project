@@ -20,12 +20,17 @@ const articleContentElement = document.querySelector("section.articleContent");
 (() => __awaiter(void 0, void 0, void 0, function* () {
     const [articlesJSON, articleContent] = yield Promise.all([
         fetch("/json/articles.json").then((res) => res.json()),
-        fetch(`/articles/${articleId}.html`).then((res) => res.text()),
+        fetch(`/articles/${articleId}.html`)
+            .then((res) => {
+            if (res.status >= 400) {
+                window.location.assign("/error/?code=404");
+                console.log("An error occurred");
+            }
+            return res;
+        })
+            .then((res) => res.text()),
     ]);
     const articleData = articlesJSON.articles[articleId];
-    if (typeof articleData === "undefined") {
-        window.location.replace("/");
-    }
     imageHeader.innerHTML = ImageHeader({
         image: {
             src: articleData.banner.url,
@@ -39,6 +44,6 @@ const articleContentElement = document.querySelector("section.articleContent");
     articleTitleElement.innerText = articleData.title;
     articleAuthorElement.innerText = articleData.author;
     articlePublicationDateElement.innerText = articleData.datePublished;
-    articleContentElement.innerHTML = articleContent;
+    articleContentElement.innerHTML = articleContent !== null && articleContent !== void 0 ? articleContent : "";
     document.title = articleData.title;
 }))();
