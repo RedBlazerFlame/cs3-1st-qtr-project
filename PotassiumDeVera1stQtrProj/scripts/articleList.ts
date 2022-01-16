@@ -3,7 +3,7 @@ import ArticlePreview from "../components/ArticlePreview.js";
 
 // Declaring Constants and Variables
 const urlParameters = new window.URLSearchParams(window.location.search);
-const queryString = urlParameters.get("q");
+const queryString = urlParameters.get("q") ?? "";
 const DEBOUNCE_TIME = 400;
 
 // Getting a reference to HTML elements

@@ -7,9 +7,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var _a;
 import ArticlePreview from "../components/ArticlePreview.js";
 const urlParameters = new window.URLSearchParams(window.location.search);
-const queryString = urlParameters.get("q");
+const queryString = (_a = urlParameters.get("q")) !== null && _a !== void 0 ? _a : "";
 const DEBOUNCE_TIME = 400;
 const resultsElement = document.querySelector("section.results");
 const searchbarInput = document.getElementById("searchbarInput");
