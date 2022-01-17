@@ -12,6 +12,9 @@ const searchbarInput: HTMLInputElement = document.getElementById(
     "searchbarInput"
 ) as HTMLInputElement;
 
+// Setting searchbar input value to the value of the query string
+searchbarInput.value = queryString;
+
 // Wrapping code in an async function so that we can await asynchronous responses
 (async () => {
     // This will retrieve all of the articles that match the query
@@ -64,7 +67,7 @@ const searchbarInput: HTMLInputElement = document.getElementById(
     showArticles(queryArticles(queryString));
 
     // This will constantly update the search results after a fixed time interval
-    let lastQuery = searchbarInput.value;
+    let lastQuery = queryString;
     setInterval(() => {
         if (searchbarInput.value !== lastQuery) {
             showArticles(queryArticles(searchbarInput.value));
