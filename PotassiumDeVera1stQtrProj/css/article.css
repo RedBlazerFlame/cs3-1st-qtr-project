@@ -2,7 +2,7 @@ main.content {
     /* Subdividing the content into subsections */
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 60vh 4vh 8vh 2vh auto 6vh auto;
+    grid-template-rows: 60vh 4vh 8vh 2vh auto 6vh auto 6vh auto;
     grid-template-areas:
     "header"
     "headerCaption"
@@ -11,6 +11,8 @@ main.content {
     "articleHeader"
     "spacer2"
     "articleContent"
+    "spacer3"
+    "articleNavigator"
     ;
 }
 
@@ -138,4 +140,22 @@ main.content > section.articleContent ul.referenceList > li {
 /* This will put a space in between each reference list entry */
 main.content > section.articleContent ul.referenceList > li:not(:first-child) {
     margin-top: 10px;
+}
+
+main.content > section.articleNavigator {
+    grid-area: articleNavigator;
+    margin: 0 5vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.articleNavigator > div p {
+    display: inline;
+}
+
+section.articleNavigator > div > a {
+    text-decoration: none;
 }
