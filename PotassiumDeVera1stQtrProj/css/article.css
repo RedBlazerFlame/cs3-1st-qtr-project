@@ -2,7 +2,7 @@ main.content {
     /* Subdividing the content into subsections */
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 60vh 4vh 8vh 2vh auto 6vh auto;
+    grid-template-rows: 60vh 4vh 8vh 2vh auto 6vh auto 6vh auto;
     grid-template-areas:
     "header"
     "headerCaption"
@@ -11,6 +11,8 @@ main.content {
     "articleHeader"
     "spacer2"
     "articleContent"
+    "spacer3"
+    "articleNavigator"
     ;
 }
 
@@ -119,9 +121,54 @@ main.content > section.articleContent .centered {
     align-self: center;
 }
 
-main.content > section.articleContent p.caption {
+main.content > section.articleContent .caption {
     color: rgba(0,0,0,0.5);
     font-style: italic;
+    font-size: 1.25rem;
+}
+
+main.content > section.articleContent .inline {
+    display: inline;
+}
+
+main.content > section.articleContent .block {
+    display: block;
+}
+
+main.content > section.articleContent .imageFigureM {
+    max-width: 30%;
+}
+
+main.content > section.articleContent .imageFigureL {
+    max-width: 50%;
+}
+
+main.content > section.articleContent .imageFigureXL {
+    max-width: 70%;
+}
+
+main.content > section.articleContent .imageFigureXXL {
+    max-width: 100%;
+}
+
+.imageFigureM > img,
+.imageFigureL > img,
+.imageFigureXL > img,
+.imageFigureXXL > img {
+    max-width: 100%;
+}
+
+main.content > section.articleContent .verticallyPadded2vw {
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+main.content > section.articleContent .floatLeft {
+    float: left;
+}
+
+main.content > section.articleContent .floatRight {
+    float: right;
 }
 
 /* This will remove the bullets before the reference list */
@@ -138,4 +185,22 @@ main.content > section.articleContent ul.referenceList > li {
 /* This will put a space in between each reference list entry */
 main.content > section.articleContent ul.referenceList > li:not(:first-child) {
     margin-top: 10px;
+}
+
+main.content > section.articleNavigator {
+    grid-area: articleNavigator;
+    margin: 0 5vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.articleNavigator > div p {
+    display: inline;
+}
+
+section.articleNavigator > div > a {
+    text-decoration: none;
 }

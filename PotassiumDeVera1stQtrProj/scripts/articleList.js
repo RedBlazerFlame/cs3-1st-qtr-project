@@ -7,12 +7,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var _a;
 import ArticlePreview from "../components/ArticlePreview.js";
 const urlParameters = new window.URLSearchParams(window.location.search);
-const queryString = urlParameters.get("q");
+const queryString = (_a = urlParameters.get("q")) !== null && _a !== void 0 ? _a : "";
 const DEBOUNCE_TIME = 400;
 const resultsElement = document.querySelector("section.results");
 const searchbarInput = document.getElementById("searchbarInput");
+searchbarInput.value = queryString;
 (() => __awaiter(void 0, void 0, void 0, function* () {
     const articlesJSON = yield fetch("/json/articles.json").then((res) => res.json());
     function queryArticles(queryString) {
@@ -37,7 +39,7 @@ const searchbarInput = document.getElementById("searchbarInput");
         resultsElement.innerHTML = matchingArticlesHTML;
     }
     showArticles(queryArticles(queryString));
-    let lastQuery = searchbarInput.value;
+    let lastQuery = queryString;
     setInterval(() => {
         if (searchbarInput.value !== lastQuery) {
             showArticles(queryArticles(searchbarInput.value));

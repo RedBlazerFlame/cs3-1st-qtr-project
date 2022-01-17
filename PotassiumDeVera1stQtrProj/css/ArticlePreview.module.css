@@ -84,11 +84,28 @@ div.article > p.description {
     grid-area: description;
 }
 
+/* Styling link */
 div.article > a.redirectButton {
     grid-area: button;
     justify-self: right;
     color: black;
     margin-right: 10px;
+
+    /* Making transitions smooth */
+    transition: color 0.5s;
+}
+
+div.article > a.redirectButton:visited {
+    color: var(--quaternary-color, #49393B);
+}
+
+div.article > a.redirectButton:hover {
+    color: var(--secondary-color, #68B16A);
+}
+
+div.article > a.redirectButton:active {
+    transition: color 0s;
+    color: var(--quaternary-color, #49393B);
 }
 
 /* This will apply to smaller screens */

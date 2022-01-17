@@ -3,7 +3,7 @@ import ArticlePreview from "../components/ArticlePreview.js";
 
 // Declaring Constants and Variables
 const urlParameters = new window.URLSearchParams(window.location.search);
-const queryString = urlParameters.get("q");
+const queryString = urlParameters.get("q") ?? "";
 const DEBOUNCE_TIME = 400;
 
 // Getting a reference to HTML elements
@@ -11,6 +11,9 @@ const resultsElement: HTMLElement = document.querySelector("section.results");
 const searchbarInput: HTMLInputElement = document.getElementById(
     "searchbarInput"
 ) as HTMLInputElement;
+
+// Setting searchbar input value to the value of the query string
+searchbarInput.value = queryString;
 
 // Wrapping code in an async function so that we can await asynchronous responses
 (async () => {
@@ -64,7 +67,7 @@ const searchbarInput: HTMLInputElement = document.getElementById(
     showArticles(queryArticles(queryString));
 
     // This will constantly update the search results after a fixed time interval
-    let lastQuery = searchbarInput.value;
+    let lastQuery = queryString;
     setInterval(() => {
         if (searchbarInput.value !== lastQuery) {
             showArticles(queryArticles(searchbarInput.value));

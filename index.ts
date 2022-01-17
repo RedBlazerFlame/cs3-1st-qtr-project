@@ -28,7 +28,13 @@ app.use(express.static(`./${ROOT_FOLDER_DIR_NAME}/htdocs`));
 
 app.use(express.static(`./${ROOT_FOLDER_DIR_NAME}`));
 
-// TODO Error Handling
+// Error Handling
+app.get(/\/articles\/(.*)/, (req, res) => {
+    console.log(`Error: cannot GET ${req.url}`);
+
+    res.status(404).send(`Error: cannot GET ${req.url}`);
+});
+
 app.get(/(.*)/, (req, res) => {
     console.log(`Error: cannot GET ${req.url}`);
 

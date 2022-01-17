@@ -6,10 +6,11 @@
     /*This will properly lay-out the footer*/
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 10vh auto 10vh auto;
+    grid-template-rows: 10vh auto auto 10vh auto;
     grid-template-areas: 
     "siteBrand"
     "aboutUsLink"
+    "accounts"
     "spacer"
     "copyright"
     ;
@@ -52,6 +53,76 @@
     color: var(--primary-color);
     font-size: 1.5rem;
     font-family: 'Open Sans', sans-serif;
+}
+
+.footer[data-component] > div.accounts {
+    grid-area: accounts;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    margin: 2vw;
+}
+
+div.accounts > div.clickableIcon {
+    box-sizing: content-box;
+    padding: 10px;
+    margin: 10px;
+    width: 33px;
+    height: 33px;
+
+    background-color: white;
+    border-radius: calc(53px / 2);
+}
+
+/* Collapses the left margin on the first clickable icon */
+div.accounts > div.clickableIcon:first-of-type {
+    margin-left: 0;
+}
+
+div.clickableIcon > a {
+
+    /* This will allow us to resize the anchor tag */
+    /* Why did it take me 40 minutes to realize that this was inline by default smh*/
+    display: block;
+}
+
+div.clickableIcon > a[title=Email] {
+    background: url('/images/socialMediaIcons1.png') no-repeat -11px -16px;
+	width: 32px;
+	height: 33px;
+}
+
+div.clickableIcon:hover > a[title=Email] {
+    background: url('/images/socialMediaIcons1.png') no-repeat -11px -91px;
+	width: 32px;
+	height: 33px;
+}
+
+div.clickableIcon > a[title=GitHub] {
+    background: url('/images/socialMediaIcons1.png') no-repeat -412px -16px;
+	width: 32px;
+	height: 33px;
+}
+
+div.clickableIcon:hover > a[title=GitHub] {
+    background: url('/images/socialMediaIcons1.png') no-repeat -412px -91px;
+	width: 32px;
+	height: 33px;
+}
+
+div.clickableIcon > a[title=Facebook] {
+    background: url('/images/socialMediaIcons1.png') no-repeat -182px -17px;
+	width: 33px;
+	height: 32px;
+}
+
+div.clickableIcon:hover > a[title=Facebook] {
+    background: url('/images/socialMediaIcons1.png') no-repeat -182px -91px;
+	width: 33px;
+	height: 32px;
 }
 
 .footer[data-component] > div.copyright {
