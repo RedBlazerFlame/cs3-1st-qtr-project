@@ -1,0 +1,210 @@
+main.content {
+    /* Subdividing the content into subsections */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60vh 4vh auto;
+    grid-template-areas:
+    "header"
+    "headerCaption"
+    "aboutUs"
+    ;
+}
+
+main.content > section.headerCaption {
+    grid-area: headerCaption;
+    margin: 0 2vw;
+    font-size: 1.25rem;
+}
+
+main.content > section.aboutUs {
+    grid-area: aboutUs;
+    font-size: 2rem;
+
+    /* For layouting */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20vh auto auto auto auto auto auto auto auto;
+    grid-template-areas:
+    "spacer1"
+    "section1"
+    "transition1"
+    "section2"
+    "transition2"
+    "section3"
+    "transition3"
+    "section4"
+    "transition4"
+    ;
+}
+
+/* Sections */
+
+section.aboutUs > section.spacer {
+    aspect-ratio: 900/200;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+section.aboutUs > section.sectionRight {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: auto 10vw 25rem;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+    "header spacer icon"
+    "description spacer icon"
+    ;
+
+    padding: 2vh 5vw;
+}  
+
+section.aboutUs > section.sectionLeft {
+    display: -ms-grid; 
+    display: grid;
+    grid-template-columns: 25rem 10vw auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+    "icon spacer header"
+    "icon spacer description"
+    ;
+
+    padding: 2vh 5vw;
+}
+
+.sectionHeader {
+    grid-area: header;
+}
+
+.sectionDescription {
+    grid-area: description;
+}
+
+.sectionIcon {
+    grid-area: icon;
+
+    /* For Layouting */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sectionIcon > .svgIcon {
+    max-width: 80%;
+}
+
+section.aboutUs > section.section1 {
+    grid-area: section1;
+
+    background-color: white;
+}
+
+section.aboutUs > section.transition1 {
+    grid-area: transition1;
+
+    background-image: url("/svgs/curves/layer1.svg");
+}
+
+section.aboutUs > section.section2 {
+    grid-area: section2;
+
+    background-color: var(--primary-color);
+
+    color: var(--secondary-color);
+}
+
+section.aboutUs > section.transition2 {
+    grid-area: transition2;
+
+    background-image: url("/svgs/curves/layer2.svg");
+}
+
+section.aboutUs > section.section3 {
+    grid-area: section3;
+
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+section.aboutUs > section.transition3 {
+    grid-area: transition3;
+
+    background-image: url("/svgs/curves/layer3.svg");
+}
+
+#earthIconSvg {
+    max-width: 100%
+}
+
+section.aboutUs > section.section4 {
+    grid-area: section4;
+
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+
+    /* For Layouting */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 2vh 5vw;
+}
+
+#articlesList { 
+    /* This will ensure that the articles will be laid out vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section.aboutUs > section.transition4 {
+    grid-area: transition4;
+
+    background-image: url("/svgs/curves/layer4.svg");
+}
+
+/* Headers */
+
+main.content > section.aboutUs .header {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0px;
+
+
+    /* Using CSS variables to keep size ratios consistent and to make code shorter */
+    --scale-factor: 4;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: calc(var(--scale-factor, 2) * 1rem);   
+}
+
+main.content > section.aboutUs h1.header {
+    --scale-factor: 4;
+}
+
+main.content > section.aboutUs h2.header {
+    --scale-factor: 3;
+}
+
+main.content > section.aboutUs h3.header {
+    --scale-factor: 2.5;
+}
+
+main.content > section.aboutUs h4.header {
+    --scale-factor: 2;
+}
+
+main.content > section.aboutUs h5.header {
+    --scale-factor: 1.5;
+}
+
+main.content > section.aboutUs h6.header {
+    --scale-factor: 1;
+}
+
+/* Removing footer top margin */
+.footer[data-component] {
+    margin-top: 0 !important;
+}

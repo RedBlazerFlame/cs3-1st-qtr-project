@@ -51,4 +51,9 @@ section.searchbar > #searchbarInput {
 main.content > section.results {
     grid-area: results;
     margin: 0 2vw;
+
+    /* This will ensure that the articles will be laid out vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

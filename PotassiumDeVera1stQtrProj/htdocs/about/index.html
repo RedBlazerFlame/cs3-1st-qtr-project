@@ -1,0 +1,158 @@
+<!--
+    Note: You may notice that I did not use semantic tags for some parts (ex. the header and the footer).
+    I asked Ma'am and she said that it was okay to leave it as a div as long as it is descriptive enough.
+    In my case, the header and the footer already have a 'data-component-name' attribute that describes its function.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Gabee De Vera" />
+        <meta
+            name="description"
+            content="The Climate Post is your online resource for climate change. Here in the climate post, we aim to write accurate articles about the earth's climate."
+        />
+        <meta name="keywords" content="about, us, climate, post" />
+        <meta name="date" content="18/01/2022" />
+        <meta name="revised" content="18/01/2022" />
+        <script
+            src="/scripts/component-generation/generator.js"
+            type="module"
+            defer
+        ></script>
+        <script src="/scripts/global.js" type="module" defer></script>
+        <script src="/scripts/about.js" type="module" defer></script>
+        <link rel="icon" href="/images/logo1.png" type="image/png" />
+        <link rel="stylesheet" href="/css/global.css" type="text/css" />
+        <link rel="stylesheet" href="/css/about.css" type="text/css" />
+        <link rel="stylesheet" href="/css/Header.module.css" type="text/css" />
+        <link rel="stylesheet" href="/css/Footer.module.css" type="text/css" />
+        <link
+            rel="stylesheet"
+            href="/css/ImageHeader.module.css"
+            type="text/css"
+        />
+        <link
+            rel="stylesheet"
+            href="/css/ArticlePreview.module.css"
+            type="text/css"
+        />
+        <title>About Us</title>
+    </head>
+    <body>
+        <!-- This HTML code will tell JavaScript to insert the header component into this div -->
+        <div data-component data-component-name="Header" data-props="{}"></div>
+
+        <main class="content">
+            <!-- This is the top banner. JavaScript will render this component (the code that does this can be found in components/ImageHeader.ts) -->
+            <section
+                data-component=""
+                data-component-name="ImageHeader"
+                data-props='{"image": {
+                "src": "/images/homePageHeader3.png",
+                "alt": "This is an image of a forest",
+                "title": "Source: DaveyBaker. (2013, October 15). Green forest 1 of 3[Image]. DeviantArt. https://www.deviantart.com/daveybaker/art/Green-forest-1-of-3-407309171"
+                },
+                "showTitle": true
+                }'
+            ></section>
+
+            <!-- This is the citation under the banner -->
+            <section class="headerCaption">
+                <p class="headerImageCitation">
+                    Image Source: DaveyBaker. (2013, October 15).
+                    <i>Green forest 1 of 3</i>[Image]. DeviantArt.
+                    <a
+                        href="https://www.deviantart.com/daveybaker/art/Green-forest-1-of-3-407309171"
+                        >https://www.deviantart.com/daveybaker/art/Green-forest-1-of-3-407309171</a
+                    >
+                </p>
+            </section>
+
+            <!-- This contains information about the climate post, such as the mission and vision -->
+            <section class="aboutUs">
+                <!--
+                    Wavy page design idea from Fireship: https://www.youtube.com/watch?v=lPJVi797Uy0
+                    Waves were generated using Haikei: https://app.haikei.app/
+                -->
+                <section class="sectionRight section1">
+                    <h1 class="header sectionHeader">Who We Are</h1>
+                    <p class="sectionDescription">
+                        <b><u>The Climate Post</u></b>
+                        is your online resource for climate change. Here in the
+                        climate post, we aim to write accurate articles about
+                        the earth's climate.
+                    </p>
+                    <div class="sectionIcon">
+                        <img
+                            class="svgIcon"
+                            id="growingLeafSvg"
+                            src="/svgs/icons/smallLeaf.svg"
+                            alt="Icon of a growing leaf"
+                            title="Made by Gabee De Vera"
+                        />
+                    </div>
+                </section>
+                <section class="spacer transition1">
+                    <!-- This empty section contains the svg waves that transitions smoothly from one section to another -->
+                </section>
+                <section class="sectionLeft section2">
+                    <h1 class="header sectionHeader">Our Mission</h1>
+                    <p class="sectionDescription">
+                        Our mission is to give people
+                        <b><u>accurate information</u></b> on the world's
+                        climate.
+                    </p>
+                    <div class="sectionIcon">
+                        <img
+                            class="svgIcon"
+                            id="informationLogoSvg"
+                            src="/svgs/icons/informationLogo.svg"
+                            alt="Information icon"
+                            title="Made by Gabee De Vera"
+                        />
+                    </div>
+                </section>
+                <section class="spacer transition2">
+                    <!-- This empty section contains the svg waves that transitions smoothly from one section to another -->
+                </section>
+                <section class="sectionRight section3">
+                    <h1 class="header sectionHeader">Our Vision</h1>
+                    <p class="sectionDescription">
+                        We envision a world that is
+                        <b><u>more aware</u></b> of climate change. We also
+                        envision a world that seeks
+                        <b><u>tangible solutions</u></b> to combat it.
+                    </p>
+                    <div class="sectionIcon">
+                        <img
+                            class="svgIcon"
+                            id="earthIconSvg"
+                            src="/svgs/icons/earthIcon.svg"
+                            alt="An icon of the earth"
+                            title="Made by Gabee De Vera"
+                        />
+                    </div>
+                </section>
+                <section class="spacer transition3">
+                    <!-- This empty section contains the svg waves that transitions smoothly from one section to another -->
+                </section>
+                <section class="section4">
+                    <h1 class="header">Our Articles</h1>
+                    <div id="articlesList">
+                        <!-- JavaScript will fill this part of the HTML Document with article previews. The code that does this is in scripts/about.ts -->
+                    </div>
+                </section>
+                <section class="spacer transition4">
+                    <!-- This empty section contains the svg waves that transitions smoothly from one section to another -->
+                </section>
+            </section>
+        </main>
+
+        <!-- This HTML code will tell JavaScript to insert the footer component into this div. The code that inserts the footer component can be found in components/Footer.ts -->
+        <div data-component data-component-name="Footer" data-props="{}"></div>
+    </body>
+</html>
