@@ -36,7 +36,8 @@ searchbarInput.value = queryString;
         const matchingArticlesHTML = matchingArticles
             .map((article) => ArticlePreview(Object.assign(Object.assign({}, article[1]), { url: `/article/?id=${article[0]}`, animate: false })).componentData)
             .reduce((acc, cur) => `${acc}${cur}`, "");
-        resultsElement.innerHTML = matchingArticlesHTML;
+        resultsElement.innerHTML =
+            matchingArticles.length === 0 ? "No Results" : matchingArticlesHTML;
     }
     showArticles(queryArticles(queryString));
     let lastQuery = queryString;

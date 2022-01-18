@@ -60,7 +60,8 @@ searchbarInput.value = queryString;
             )
             .reduce((acc, cur) => `${acc}${cur}`, "");
 
-        resultsElement.innerHTML = matchingArticlesHTML;
+        resultsElement.innerHTML =
+            matchingArticles.length === 0 ? "No Results" : matchingArticlesHTML;
     }
 
     // Initial search
