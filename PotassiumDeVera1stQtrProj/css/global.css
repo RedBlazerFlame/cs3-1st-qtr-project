@@ -13,8 +13,17 @@
     font-size: clamp(6px, 1vw, 12px);
 
     /* Declaring CSS Variables for the color scheme */
+    --wp-25-color: #FEFFF9;
+    --wp-50-color: #FDFFF3;
+    --wp-75-color: #FCFFED;
     --primary-color: #FBFEE6;
+    --ps-25-color: #D7EBC7;
+    --ps-50-color: #B2D8A8;
+    --ps-75-color: #8DC589;
     --secondary-color: #68B16A;
+    --st-25-color: #519559;
+    --st-50-color: #397847;
+    --st-75-color: #215B35;
     --tertiary-color: #093E23;
     --quaternary-color: #49393B;
 }

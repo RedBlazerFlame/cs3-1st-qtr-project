@@ -1,7 +1,7 @@
 const ArticlePreview = (props) => {
     return {
         componentData: `
-        <div class="article${props.animate ? " animated" : ""}">
+        <div class="article${props.animate ? " animated" : ""}${props.theme ? ` ${props.theme}` : ""}">
             <div class="image">
                 <img src="${props.icon.url}" ${typeof props.icon.alt === "string" ? `alt=${props.icon.alt}` : ""} ${typeof props.icon.title === "string"
             ? `title="${props.icon.title}"`
